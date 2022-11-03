@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <!--<include layout="@layout/toolbar"></include>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hundred_eighty"
+            android:layout_margin="@dimen/fifteen"
+            android:background="@drawable/edit_background1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/forty"
+                android:background="@drawable/myjobs_bg1"
+                android:layout_margin="@dimen/three">
+
+                <TextView
+                    android:id="@+id/booking1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:text="Booking ID : "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/edittextsize"
+                    android:fontFamily="@font/inter_regular">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/booking_Id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/thirty"
+                    android:layout_toRightOf="@id/booking1"
+                    android:text="#1244"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize"
+                    android:fontFamily="@font/inter_regular">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/seealll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/twenty"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="See All"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize">
+
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/Service1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:text="Category"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/category_Name"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Maintenance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/user1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:text="Customer"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/customer_Name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Renjith"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/statues"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:text="Status"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2">
+
+                            <TextView
+                                android:id="@+id/status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/statues_bg"
+                                android:padding="@dimen/seven"
+                                android:text="paid"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- <ImageView
+                     android:id="@+id/image_click"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentRight="true"
+                     android:layout_centerInParent="true"
+                     android:layout_marginRight="@dimen/ten"
+                     android:src="@drawable/baseline_arrow_forward">
+
+                 </ImageView>
+     -->
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

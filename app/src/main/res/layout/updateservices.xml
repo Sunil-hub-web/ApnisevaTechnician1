@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDF5F5F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <!--  <include layout="@layout/toolbar"></include>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hundred"
+            android:orientation="vertical">
+
+            <!--  <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:weightSum="2"
+                  android:layout_marginLeft="@dimen/twenty_five">
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_weight="0.8"
+                      android:layout_height="wrap_content"
+                      android:text="Your Services"
+                      android:textSize="@dimen/edittextsize"
+                      android:textColor="@color/black"
+                      android:layout_centerInParent="true">
+
+                  </TextView>
+
+                  <TextView
+
+                      android:id="@+id/text_category"
+                      android:layout_width="0dp"
+                      android:layout_weight="1.2"
+                      android:layout_height="wrap_content"
+                      android:text="Update Services"
+                      android:textSize="@dimen/edittextsize"
+                      android:textColor="@color/back1"
+                      android:layout_centerInParent="true">
+
+                  </TextView>
+
+
+              </LinearLayout>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/twenty_five"
+                android:layout_marginTop="@dimen/twenty_five"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_bold"
+                android:text="Select Your Update Services"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittextsize">
+
+            </TextView>
+
+
+            <Spinner
+                android:id="@+id/WorkingCategory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/forty_five"
+                android:layout_marginLeft="@dimen/twenty_five"
+                android:layout_marginTop="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty_five"
+                android:layout_marginBottom="@dimen/fifteen"
+                android:background="@drawable/edit_background"
+                android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/two"
+                android:paddingRight="@dimen/two"
+                android:spinnerMode="dropdown"
+                android:text="Please Select Your Area"
+                android:textColor="#25297A"
+                android:textSize="@dimen/fifteen" />
+
+
+            <Spinner
+                android:id="@+id/WorkingSubcategory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/forty_five"
+                android:layout_marginLeft="@dimen/twenty_five"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/twenty_five"
+                android:layout_marginBottom="@dimen/fifteen"
+                android:background="@drawable/edit_background"
+                android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/two"
+                android:paddingRight="@dimen/two"
+                android:spinnerMode="dropdown"
+                android:text="Please Select Your Area"
+                android:textColor="#25297A"
+                android:textSize="@dimen/fifteen" />
+
+            <Button
+                android:id="@+id/btn_Signin"
+                android:layout_width="@dimen/two_hundred"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/twenty_five"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/color1"
+                android:fontFamily="@font/inter_bold"
+                android:text="Update Services"
+                android:textColor="@color/white">
+
+
+            </Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

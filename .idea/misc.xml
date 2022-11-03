@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable-v24/myjobs_bg1.xml" value="0.1235" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable-v24/statues_bg.xml" value="0.1235" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/baseline_visibility.xml" value="0.123" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/button_background.xml" value="0.123" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/deshboard_back.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/edit_background.xml" value="0.123" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/edit_background1.xml" value="0.123" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/homedesh_back.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/ic_keyboard_arrow_down_black_24dp.xml" value="0.123" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/statuec_back.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/statues_backbutt.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/statues_edit.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/drawable/statues_shape.xml" value="0.141" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/activity_forget_password.xml" value="0.18" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/activity_login_page.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/activity_main.xml" value="0.20677083333333332" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/activity_register_page.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/activity_verification_code.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/fragment_blank.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/home_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/my_job.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/myjoballdetails.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/myjobdetails.xml" value="0.25" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/myprofile_fragment.xml" value="0.18" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/navigationdrawer.xml" value="0.25" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/toolbar.xml" value="0.22" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/updateservices.xml" value="0.22083333333333333" />
+        <entry key="..\:/New folder/ApnisevaTechnician2/app/src/main/res/layout/updatestatues.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+       <!-- <include layout="@layout/toolbar"></include>-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteen"
+                android:background="@drawable/edit_background1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/forty"
+                    android:background="@drawable/myjobs_bg1"
+                    android:layout_margin="@dimen/three">
+
+                    <TextView
+                        android:id="@+id/booking1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:text="Booking ID : "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/edittextsize"
+                        android:fontFamily="@font/inter_regular">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/booking_Id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/thirty"
+                        android:layout_toRightOf="@id/booking1"
+                        android:text="#1244"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize"
+                        android:fontFamily="@font/inter_regular">
+
+                    </TextView>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Booking Details"
+                    android:textSize="@dimen/twenty"
+                    android:layout_margin="@dimen/fifteen"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/black"
+                    >
+
+                </TextView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/ten">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/twelve"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/Service1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:layout_weight="0.8"
+                                android:text="Category"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/category_Name"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Maintenance"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <!--   <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="@dimen/twelve"
+                               android:weightSum="2">
+
+                               <TextView
+                                   android:id="@+id/user1"
+                                   android:layout_width="0dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginLeft="@dimen/fifteen"
+                                   android:layout_weight="0.8"
+                                   android:text="Customer"
+                                   android:textColor="@color/black"
+                                   android:textSize="@dimen/textsize">
+
+                               </TextView>
+
+                               <TextView
+                                   android:id="@+id/customer_Name"
+                                   android:layout_width="0dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                   android:text="Renjith"
+                                   android:textColor="@color/black"
+                                   android:textSize="@dimen/textsize">
+
+                               </TextView>
+
+
+                           </LinearLayout>-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/twelve"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/statues"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:layout_weight="0.8"
+                                android:text="Status"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2">
+
+                                <TextView
+                                    android:id="@+id/status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/statues_bg"
+                                    android:padding="@dimen/seven"
+                                    android:text="paid"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/textsize"
+                                    android:fontFamily="@font/inter_regular">
+
+                                </TextView>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- <ImageView
+                         android:id="@+id/image_click"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentRight="true"
+                         android:layout_centerInParent="true"
+                         android:layout_marginRight="@dimen/ten"
+                         android:src="@drawable/baseline_arrow_forward">
+
+                     </ImageView>
+         -->
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address Details"
+                    android:textSize="@dimen/twenty"
+                    android:layout_margin="@dimen/fifteen"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/CompleteAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/hundred_twenty"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:layout_marginBottom="@dimen/ten"
+                        android:background="@drawable/edit_background1"
+                        android:gravity="start"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="@dimen/ten"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize"
+                        android:fontFamily="@font/inter_regular"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Details"
+                    android:textSize="@dimen/twenty"
+                    android:layout_margin="@dimen/fifteen"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/ten">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_marginTop="@dimen/fifteen">
+
+                            <TextView
+                                android:id="@+id/user"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Customer"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/customer_Name"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/user"
+                                android:text="Ranjity"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_marginTop="@dimen/fifteen">
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Booking Date"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/booking_date"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_marginTop="@dimen/fifteen">
+
+                            <TextView
+                                android:id="@+id/time"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Time"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/booking_time"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/fifteen">
+
+                            <TextView
+                                android:id="@+id/techcharge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Tech.Charge"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/edittextsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/fifty"
+                                android:layout_toRightOf="@id/techcharge"
+                                android:text="Rs.382.50"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/edittextsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/fifteen">
+
+                            <TextView
+                                android:id="@+id/fixedRate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Fixed.Rate"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/edittextsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="65dp"
+                                android:layout_toRightOf="@id/fixedRate"
+                                android:text="Rs.3825.50"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/edittextsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/fifteen"
+                            android:layout_weight="2"
+                            android:layout_marginBottom="@dimen/ten">
+
+                            <TextView
+                                android:id="@+id/note"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/fifteen"
+                                android:text="Note"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Test Task"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/textsize"
+                                android:fontFamily="@font/inter_regular">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_UpdateStatues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:backgroundTint="@color/color1"
+                    android:layout_gravity="right"
+                    android:layout_margin="@dimen/fifteen"
+                    android:text="Update Status"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/white">
+
+
+                </Button>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPage"
+    android:background="#EDF5F5F6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_hundred_fifty"
+                android:src="@drawable/mobilelogin_rafiki">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back!"
+                android:gravity="center"
+                android:textSize="@dimen/twenty_five"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login in to your existant account"
+                android:gravity="center"
+                android:textSize="@dimen/textsize"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_MobileNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:layout_marginTop="@dimen/fifty"
+                android:padding="@dimen/fifteen"
+                android:fontFamily="@font/inter_regular"
+                android:ems="10"
+                android:hint="Mobile No"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty_size"
+                android:textStyle="normal">
+
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/edit_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:layout_marginTop="@dimen/twenty_five"
+                android:padding="@dimen/fifteen"
+                android:fontFamily="@font/inter_regular"
+                android:ems="10"
+                android:hint="Password"
+                android:drawableRight="@drawable/baseline_visibility_off"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty_size"
+                android:textStyle="normal">
+
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/text_ForgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/value"
+                android:layout_marginTop="@dimen/fifteen"
+                android:gravity="right"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginRight="@dimen/fifteen"
+                android:text="Forgot Password ?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittextsize">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btn_Signin"
+                android:layout_width="@dimen/two_hundred"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                app:backgroundTint="@color/color1"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/twenty_five"
+                android:text="Login In"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white">
+
+
+            </Button>
+
+            <RelativeLayout
+                android:id="@+id/r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/twenty">
+
+                <TextView
+                    android:id="@+id/login2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't Have an account?"
+                    android:textColor="#817F7F"
+                    android:textSize="@dimen/textsize"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_medium"/>
+
+                <TextView
+                    android:id="@+id/text_signUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/login2"
+                    android:fontFamily="@font/inter_bold"
+                    android:text=" Sign Up"
+                    android:textColor="@color/color5"
+                    android:textSize="@dimen/textsize" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/edit_background"
+    android:backgroundTint="@color/color4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/thirty">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/seventy"
+                android:layout_height="@dimen/seventy"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/twenty"
+                android:src="@drawable/no_avatar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_toRightOf="@id/profile_image"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Sunik K Dash"
+                    android:textColor="@color/color6"
+                    android:textSize="@dimen/edittextsize">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="7894561230"
+                    android:textColor="@color/color6"
+                    android:textSize="@dimen/textsize">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin1"
+            android:layout_marginLeft="@dimen/twenty_five"
+            android:layout_marginTop="@dimen/fifty"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_home"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/home">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_Home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_home"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Home"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/user"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_profile"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="My Profile"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_job"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/suitcase"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_job"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="My Job"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_transaction"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/send_money"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_transaction"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Transaction"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_message"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/chat"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_message"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="My Messages"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_services"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/customer_support"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_services"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_services"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Services Categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_reviews"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/chat_rr"
+                    app:tint="@color/white">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_reviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_reviews"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="My Reviews and Ratings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_updateservices"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/categories"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_updateservices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_updateservices"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Update Categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sixty"
+            android:layout_marginLeft="@dimen/fifty"
+            android:layout_below="@id/lin2">
+
+            <ImageView
+                android:id="@+id/image_logout"
+                android:layout_width="@dimen/twenty_five"
+                android:layout_height="@dimen/twenty_five"
+                android:src="@drawable/check_out">
+
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/nav_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/fifteen"
+                android:layout_toRightOf="@id/image_logout"
+                android:drawablePadding="@dimen/ten"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="@dimen/twenty"></TextView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
