@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView nav_Home,nav_profile,nav_job,nav_transaction,nav_services,nav_reviews,nav_updateservices;
     public static DrawerLayout drawerLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

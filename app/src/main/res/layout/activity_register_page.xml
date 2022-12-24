@@ -57,7 +57,7 @@
                 android:background="@drawable/edit_background"
                 android:ems="10"
                 android:fontFamily="@font/inter_medium"
-                android:hint="User Name"
+                android:hint="Name"
                 android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLength="10"
@@ -113,6 +113,28 @@
 
             </EditText>
 
+            <EditText
+                android:id="@+id/edit_userName1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginTop="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:background="@drawable/edit_background"
+                android:ems="10"
+                android:fontFamily="@font/inter_medium"
+                android:hint="User Name"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:maxLength="10"
+                android:padding="@dimen/fifteen"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty_size"
+                android:textStyle="normal">
+
+
+            </EditText>
+
             <Spinner
                 android:id="@+id/WorkingCategory"
                 android:layout_width="match_parent"
@@ -128,7 +150,7 @@
                 android:textColor="@color/color5"
                 android:textSize="@dimen/fifteen" />
 
-            <Spinner
+        <!--    <Spinner
                 android:id="@+id/WorkingSubcategory"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fifty"
@@ -141,7 +163,7 @@
                 android:spinnerMode="dropdown"
                 android:text="Please Select Your Area"
                 android:textColor="@color/color5"
-                android:textSize="@dimen/fifteen" />
+                android:textSize="@dimen/fifteen" />-->
 
             <Spinner
                 android:id="@+id/Workingcity"
