@@ -136,7 +136,7 @@
             </EditText>
 
             <Spinner
-                android:id="@+id/WorkingCategory"
+                android:id="@+id/categories"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fifty"
                 android:layout_marginLeft="@dimen/twenty"
