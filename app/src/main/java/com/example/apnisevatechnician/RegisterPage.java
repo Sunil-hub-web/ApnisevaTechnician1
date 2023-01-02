@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -100,6 +102,51 @@ public class RegisterPage extends AppCompatActivity {
 
         });
 
+        binding.Workingcity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                str_CityName = binding.Workingcity.getItemAtPosition(binding.Workingcity.getSelectedItemPosition()).toString();
+
+                if (str_CityName.equalsIgnoreCase("Select City")) {
+
+                    str_CityName = "";
+
+                } else {
+
+                    str_CityId = name_City.get(str_CityName);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        binding.categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                str_CategoriesName = binding.categories.getItemAtPosition(binding.categories.getSelectedItemPosition()).toString();
+
+                if (str_CategoriesName.equalsIgnoreCase("Select City")) {
+
+                    str_CategoriesName = "";
+
+                } else {
+
+                    str_CategoriesId = name_category.get(str_CategoriesName);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     public void getCityCategory(){
@@ -142,10 +189,14 @@ public class RegisterPage extends AppCompatActivity {
                         }
                     }
 
-                    /*Adapter Working_city_adapter = new CategorySpinerAdapter(UserRegister.this,R.layout.spinneritem,Working_city);
-                    Working_city_adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
-                    Workingcity.setAdapter(Working_city_adapter);
-                    Workingcity.setSelection(-1,true);*/
+                    cityname.add(0,"Select City");
+
+                    ArrayAdapter<String> dataAdapterCity = new ArrayAdapter<String>(RegisterPage.this,
+                            R.layout.spinnerfront2, cityname);
+                    dataAdapterCity.setDropDownViewResource(R.layout.spinneritem);
+                    binding.Workingcity.setAdapter(dataAdapterCity);
+                    binding.Workingcity.setSelection(-1,true);
+
 
                     categoryModelClasses = new ArrayList<>();
                     JSONArray jsonArray_category = new JSONArray(allcategory);
@@ -159,6 +210,12 @@ public class RegisterPage extends AppCompatActivity {
                         categoryname.add(cat_name);
                         name_category.put(cat_name,cat_id);
                     }
+
+                    ArrayAdapter<String> dataAdapterCategories = new ArrayAdapter<String>(RegisterPage.this,
+                            R.layout.spinnerfront2, categoryname);
+                    dataAdapterCategories.setDropDownViewResource(R.layout.spinneritem);
+                    binding.categories.setAdapter(dataAdapterCategories);
+                    binding.categories.setSelection(-1,true);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -212,7 +269,7 @@ public class RegisterPage extends AppCompatActivity {
         progressDialog.show();
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.userLogin, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.Signup_vendor, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

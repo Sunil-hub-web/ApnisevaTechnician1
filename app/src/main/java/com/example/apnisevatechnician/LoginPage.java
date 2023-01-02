@@ -30,6 +30,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apnisevatechnician.databinding.ActivityLoginPageBinding;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.extra.SharedPrefManager;
+import com.example.apnisevatechnician.modelclass.Login_ModelClass;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -224,6 +226,13 @@ public class LoginPage extends AppCompatActivity {
                             String email = jsonObject_statues.getString("email");
                             String contact_no = jsonObject_statues.getString("contact_no");
                             String profile_image = jsonObject_statues.getString("profile_image");
+                            String password = binding.editPassword.getText().toString().trim();
+
+                            Login_ModelClass login_modelClass = new Login_ModelClass(
+                                id,full_name,user_name,email,contact_no,profile_image,password
+                            );
+
+                            SharedPrefManager.getInstance(LoginPage.this).userLogin(login_modelClass);
 
                             startActivity(new Intent(LoginPage.this,MainActivity.class));
                         }
