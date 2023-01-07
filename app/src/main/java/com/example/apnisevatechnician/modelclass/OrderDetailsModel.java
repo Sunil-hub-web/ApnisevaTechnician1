@@ -2,10 +2,10 @@ package com.example.apnisevatechnician.modelclass;
 
 public class OrderDetailsModel {
 
-    String orders_id,productname,qty,img,price,user_id,payment_mode,status;
+    String orders_id,productname,qty,img,price,user_id,payment_mode,status,ordersid;
 
     public OrderDetailsModel(String orders_id, String productname, String qty, String img, String price,
-                             String user_id, String payment_mode, String status) {
+                             String user_id, String payment_mode, String status,String ordersid) {
         this.orders_id = orders_id;
         this.productname = productname;
         this.qty = qty;
@@ -14,6 +14,7 @@ public class OrderDetailsModel {
         this.user_id = user_id;
         this.payment_mode = payment_mode;
         this.status = status;
+        this.ordersid = ordersid;
     }
 
     public String getOrders_id() {
@@ -78,5 +79,13 @@ public class OrderDetailsModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getOrdersid() {
+        return ordersid;
+    }
+
+    public void setOrdersid(String ordersid) {
+        this.ordersid = ordersid;
     }
 }

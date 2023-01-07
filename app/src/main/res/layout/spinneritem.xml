@@ -11,7 +11,8 @@
     android:maxLines="2"
     android:paddingLeft="@dimen/ten"
     android:paddingRight="@dimen/ten"
-    android:textSize="14dp"
+    android:layout_margin="@dimen/fifteen"
+    android:textSize="@dimen/edittextsize"
     android:drawableTint="@color/transparent"
     android:textColor="@color/black"/>
 

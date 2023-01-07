@@ -8,5 +8,5 @@ public class AppUrl {
     public static final String getCityCategory = "http://collegeprojectz.com/apniseva/API/Signup_vendor";
     public static final String Signup_vendor = "http://collegeprojectz.com/apniseva/API/Signup_vendor";
     public static final String getallOrder = "http://collegeprojectz.com/apniseva/API/getallOrder";
-    //public static final String getallOrder = "http://collegeprojectz.com/apniseva/API/getallOrder";
+    public static final String getsingleOrder = "http://collegeprojectz.com/apniseva/API/getsingleOrder";
 }

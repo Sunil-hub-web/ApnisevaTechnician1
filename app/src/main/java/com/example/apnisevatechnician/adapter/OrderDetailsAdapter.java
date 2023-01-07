@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +37,12 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
     @Override
     public void onBindViewHolder(@NonNull OrderDetailsAdapter.Viewholder holder, int position) {
 
+        OrderDetailsModel order = orderDetailslist.get(position);
+        holder.text_productname.setText(order.getProductname());
+        holder.price.setText(order.getPrice());
+        holder.text_qty.setText(order.getQty());
+        holder.booking_Id.setText(order.getOrdersid());
+
     }
 
     @Override
@@ -44,8 +51,15 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
+
+        TextView text_productname,price,text_qty,booking_Id;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
+
+            text_productname = itemView.findViewById(R.id.text_productname);
+            price = itemView.findViewById(R.id.price);
+            text_qty = itemView.findViewById(R.id.text_qty);
+            booking_Id = itemView.findViewById(R.id.booking_Id);
         }
     }
 }

@@ -205,6 +205,8 @@ public class LoginPage extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String status = jsonObject.getString("status");
 
+                    progressDialog.dismiss();
+
                     if(status.equals("200")){
 
                         Toast.makeText(LoginPage.this, "Login Success Fully", Toast.LENGTH_SHORT).show();
@@ -251,7 +253,9 @@ public class LoginPage extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
-                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                Toast.makeText(LoginPage.this, ""+error, Toast.LENGTH_SHORT).show();
+
+/*                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
 
                     Toast.makeText(getApplicationContext(), "Please check Internet Connection", Toast.LENGTH_SHORT).show();
 
@@ -274,7 +278,7 @@ public class LoginPage extends AppCompatActivity {
 
                     }
 
-                }
+                }*/
             }
         }){
 

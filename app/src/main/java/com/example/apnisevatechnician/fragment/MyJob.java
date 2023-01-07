@@ -33,6 +33,7 @@ import com.example.apnisevatechnician.RegisterPage;
 import com.example.apnisevatechnician.adapter.OrderDetailsAdapter;
 import com.example.apnisevatechnician.databinding.MyjobdetailsBinding;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.modelclass.OrderDetailsModel;
 
 import org.json.JSONArray;
@@ -52,6 +53,8 @@ public class MyJob extends Fragment {
     ArrayList<OrderDetailsModel> orderDetailsModels;
     RecyclerView recyclerOrderDetails;
 
+    String userId;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -70,6 +73,9 @@ public class MyJob extends Fragment {
             ft.commit();
         });*/
 
+        userId = SharedPrefManager.getInstance(getContext()).getUser().getId();
+        getJobDetails(userId);
+
         return view;
     }
 
@@ -83,11 +89,15 @@ public class MyJob extends Fragment {
             @Override
             public void onResponse(String response) {
 
+                progressDialog.dismiss();
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String status = jsonObject.getString("status");
 
                     if(status.equals("200")){
+
+                        orderDetailsModels = new ArrayList<>();
 
                         String error = jsonObject.getString("error");
                         String messages = jsonObject.getString("messages");
@@ -111,9 +121,10 @@ public class MyJob extends Fragment {
                             String payment_mode = jsonObject_order.getString("payment_mode");
                             String status_det = jsonObject_order.getString("status");
                             String user_id = jsonObject_order.getString("user_id");
+                            String order_id = jsonObject_order.getString("order_id");
 
                             OrderDetailsModel orderDetailsModel = new OrderDetailsModel(
-                                    orders_id,productname,qty,img,price,user_id,payment_mode,status_det
+                                    orders_id,productname,qty,img,price,user_id,payment_mode,status_det,order_id
                             );
 
                             orderDetailsModels.add(orderDetailsModel);

@@ -159,6 +159,8 @@ public class RegisterPage extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
+                progressDialog.dismiss();
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
 
@@ -189,7 +191,7 @@ public class RegisterPage extends AppCompatActivity {
                         }
                     }
 
-                    cityname.add(0,"Select City");
+                    cityname.add(0,"-- Select City---");
 
                     ArrayAdapter<String> dataAdapterCity = new ArrayAdapter<String>(RegisterPage.this,
                             R.layout.spinnerfront2, cityname);
@@ -204,12 +206,14 @@ public class RegisterPage extends AppCompatActivity {
 
                         JSONObject jsonObject_categ = jsonArray_category.getJSONObject(j);
                         String cat_id = jsonObject_categ.getString("cat_id");
-                        String cat_name = jsonObject_categ.getString("cat_name  ");
+                        String cat_name = jsonObject_categ.getString("cat_name");
                         String status_cate = jsonObject_categ.getString("status");
 
                         categoryname.add(cat_name);
                         name_category.put(cat_name,cat_id);
                     }
+
+                    categoryname.add(0,"--- Select You Category ---");
 
                     ArrayAdapter<String> dataAdapterCategories = new ArrayAdapter<String>(RegisterPage.this,
                             R.layout.spinnerfront2, categoryname);
@@ -265,7 +269,7 @@ public class RegisterPage extends AppCompatActivity {
                              String city,String password){
 
         ProgressDialog progressDialog = new ProgressDialog(RegisterPage.this);
-        progressDialog.setMessage("Login Please Wait.....");
+        progressDialog.setMessage("Register Please Wait.....");
         progressDialog.show();
 
 
