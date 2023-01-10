@@ -23,11 +23,14 @@
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
+        android:text="Home"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        android:text="Home"
-        android:layout_margin="9dp"
-        android:layout_centerHorizontal="true"
         android:textStyle="bold"></TextView>
 
     <LinearLayout

@@ -297,4 +297,13 @@ public class LoginPage extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(SharedPrefManager.getInstance(LoginPage.this).isLoggedIn()){
+
+            startActivity(new Intent(LoginPage.this,MainActivity.class));
+        }
+    }
 }

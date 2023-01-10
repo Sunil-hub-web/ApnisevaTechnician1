@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentTransaction ft;
     TextView nav_Home,nav_profile,nav_job,nav_transaction,nav_services,nav_reviews,nav_updateservices;
     public static DrawerLayout drawerLayout;
-
-
+    public static TextView text_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(view);
 
         drawerLayout = findViewById(R.id.MyDrawer);
+        text_name = findViewById(R.id.text_name);
 
         Window window = MainActivity.this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ft.replace(R.id.fram, home,"testID");
         ft.addToBackStack(null);
         ft.commit();
+        text_name.setText("Home");
 
         nav_Home.setOnClickListener(view1 -> {
 
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.replace(R.id.fram, home_h);
             ft.addToBackStack(null);
             ft.commit();
+            text_name.setText("Home");
 
         });
 
@@ -83,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            ft.replace(R.id.fram, myMessages);
            ft.addToBackStack(null);
            ft.commit();
+
+           text_name.setText("My Profile");
        });
 
        nav_job.setOnClickListener(view1 -> {
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            ft.addToBackStack(null);
            ft.commit();
 
+           text_name.setText("My Job");
        });
 
         nav_updateservices.setOnClickListener(view1 -> {

@@ -1,15 +1,19 @@
 package com.example.apnisevatechnician.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apnisevatechnician.R;
+import com.example.apnisevatechnician.fragment.JobDetails;
 import com.example.apnisevatechnician.modelclass.OrderDetailsModel;
 
 import java.util.ArrayList;
@@ -43,6 +47,18 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
         holder.text_qty.setText(order.getQty());
         holder.booking_Id.setText(order.getOrdersid());
 
+        holder.text_seealll.setOnClickListener(view -> {
+
+            AppCompatActivity activity = (AppCompatActivity) view.getContext();
+            Fragment myFragment = new JobDetails();
+            Bundle bundle=new Bundle();
+            bundle.putString("userId",order.getUser_id());
+            bundle.putString("orderId",order.getOrdersid());
+            myFragment.setArguments(bundle);
+            activity.getSupportFragmentManager().beginTransaction().replace(R.id.fram, myFragment).addToBackStack(null).commit();
+
+        });
+
     }
 
     @Override
@@ -52,7 +68,7 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
 
     public class Viewholder extends RecyclerView.ViewHolder {
 
-        TextView text_productname,price,text_qty,booking_Id;
+        TextView text_productname,price,text_qty,booking_Id,text_seealll;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -60,6 +76,7 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
             price = itemView.findViewById(R.id.price);
             text_qty = itemView.findViewById(R.id.text_qty);
             booking_Id = itemView.findViewById(R.id.booking_Id);
+            text_seealll = itemView.findViewById(R.id.text_seealll);
         }
     }
 }

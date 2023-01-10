@@ -83,7 +83,6 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/five"
                             android:layout_marginRight="@dimen/ten"
-                            android:layout_toRightOf="@id/statues"
                             android:layout_weight="1"
                             android:background="@drawable/statues_shape"
                             app:backgroundTint="@color/color5">
@@ -140,7 +139,6 @@
                             android:layout_height="@dimen/forty"
                             android:layout_gravity="center"
                             android:layout_marginRight="@dimen/ten"
-                            android:layout_toRightOf="@id/statues"
                             android:layout_weight="1"
                             android:background="@drawable/statues_shape">
 
@@ -199,7 +197,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="@dimen/ten"
-                            android:layout_toRightOf="@id/statues"
                             android:layout_weight="1"
                             android:background="@drawable/statues_shape">
 
@@ -437,7 +434,6 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_marginRight="@dimen/ten"
-                            android:layout_toRightOf="@id/statues"
                             android:layout_weight="1"
                             android:background="@drawable/statues_shape">
 
@@ -643,7 +639,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="@dimen/ten"
-                            android:layout_toRightOf="@id/statues"
                             android:layout_weight="1.5"
                             android:background="@drawable/statues_shape">
 

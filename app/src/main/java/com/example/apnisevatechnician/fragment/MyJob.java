@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apnisevatechnician.LoginPage;
+import com.example.apnisevatechnician.MainActivity;
 import com.example.apnisevatechnician.R;
 import com.example.apnisevatechnician.RegisterPage;
 import com.example.apnisevatechnician.adapter.OrderDetailsAdapter;
@@ -73,6 +74,7 @@ public class MyJob extends Fragment {
             ft.commit();
         });*/
 
+        MainActivity.text_name.setText("My Job");
         userId = SharedPrefManager.getInstance(getContext()).getUser().getId();
         getJobDetails(userId);
 
@@ -191,6 +193,7 @@ public class MyJob extends Fragment {
 
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(3000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.getCache().clear();
         requestQueue.add(stringRequest);
     }
 }
