@@ -88,7 +88,6 @@
                 android:layout_gravity="center_horizontal"
                 android:columnOrderPreserved="false">
 
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="170dp"
                     android:layout_height="170dp"
@@ -101,7 +100,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        >
+                        android:id="@+id/newJobDetails">
 
                         <ImageView
                             android:layout_width="match_parent"

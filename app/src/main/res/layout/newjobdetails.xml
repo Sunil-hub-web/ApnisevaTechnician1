@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fifteen"
+        android:background="@drawable/edit_background1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forty"
+            android:background="@drawable/myjobs_bg1"
+            android:layout_margin="@dimen/three">
+
+            <TextView
+                android:id="@+id/booking1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/fifteen"
+                android:fontFamily="@font/inter_regular"
+                android:text="Booking ID : "
+                android:textColor="@color/white"
+                android:textSize="@dimen/twelve_size">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/booking_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_toRightOf="@id/booking1"
+                android:fontFamily="@font/inter_regular"
+                android:text="#1244"
+                android:textColor="@color/white"
+                android:textSize="@dimen/twelve_size">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/text_seealll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/twenty"
+                android:fontFamily="@font/inter_bold"
+                android:text="See All"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/twenty">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/Service1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="productname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/text_productname"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/user1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="price : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Rs 500000"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="qty : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/text_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <!-- <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/twelve"
+                     android:weightSum="2">
+
+                     <TextView
+                         android:id="@+id/statues"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/fifteen"
+                         android:layout_weight="0.8"
+                         android:fontFamily="@font/inter_regular"
+                         android:text="Status"
+                         android:textColor="@color/black"
+                         android:textSize="@dimen/textsize">
+
+                     </TextView>
+
+                     <RelativeLayout
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1.2">
+
+                         <TextView
+                             android:id="@+id/status"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/statues_bg"
+                             android:fontFamily="@font/inter_regular"
+                             android:padding="@dimen/seven"
+                             android:text="paid"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/textsize">
+
+                         </TextView>
+
+                     </RelativeLayout>
+
+                 </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <Button
+                        android:id="@+id/btn_Accept"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/forty"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/five"
+                        android:layout_marginRight="@dimen/five"
+                        android:fontFamily="@font/inter_light"
+                        android:text="Accept"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize">
+
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/btn_Reject"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/forty"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/five"
+                        android:layout_marginRight="@dimen/five"
+                        android:background="@drawable/button_background"
+                        android:backgroundTint="@color/color1"
+                        android:fontFamily="@font/inter_light"
+                        android:text="Reject"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize">
+
+
+                    </Button>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

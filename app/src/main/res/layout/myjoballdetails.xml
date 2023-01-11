@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EDF5F5F6">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
        <!-- <include layout="@layout/toolbar"></include>-->
@@ -53,7 +54,6 @@
                         android:fontFamily="@font/inter_regular">
 
                     </TextView>
-
 
                 </RelativeLayout>
 
@@ -434,7 +434,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/edit_MobileNo"
+                        android:id="@+id/edit_VerifayOTP"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.4"
@@ -445,13 +445,13 @@
                         android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="10"
-                        android:padding="@dimen/ten"
+                        android:padding="@dimen/eight"
                         android:textColor="@color/color5"
-                        android:textSize="@dimen/twenty_size"
+                        android:textSize="@dimen/edittextsize"
                         android:textStyle="normal"></EditText>
 
                     <Button
-                        android:id="@+id/btn_UpdateStatues"
+                        android:id="@+id/btn_Verifay"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -468,20 +468,83 @@
                     </Button>
                 </LinearLayout>
 
-               <!-- <Button
-                    android:id="@+id/btn_UpdateStatues"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_background"
-                    android:backgroundTint="@color/color1"
-                    android:layout_gravity="right"
-                    android:layout_margin="@dimen/fifteen"
-                    android:text="Update Status"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/white">
+                    android:orientation="vertical"
+                    android:id="@+id/lin_Services">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Aditional Services"
+                        android:textSize="@dimen/twenty"
+                        android:layout_margin="@dimen/fifteen"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/edit_Services"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:layout_marginRight="@dimen/twenty"
+                        android:layout_marginTop="@dimen/fifty"
+                        android:padding="@dimen/fifteen"
+                        android:fontFamily="@font/inter_regular"
+                        android:ems="10"
+                        android:hint="EnterServices"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:textColor="@color/color5"
+                        android:textSize="@dimen/twenty_size"
+                        android:textStyle="normal">
 
 
-                </Button>-->
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit_Price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:layout_marginRight="@dimen/twenty"
+                        android:layout_marginTop="@dimen/fifty"
+                        android:padding="@dimen/fifteen"
+                        android:fontFamily="@font/inter_regular"
+                        android:ems="10"
+                        android:hint="Enter Price"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/color5"
+                        android:textSize="@dimen/twenty_size"
+                        android:textStyle="normal">
+
+
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/btn_AddServices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_background"
+                        android:backgroundTint="@color/color1"
+                        android:layout_gravity="left"
+                        android:layout_margin="@dimen/fifteen"
+                        android:text="Add Additional Services"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/white">
+
+
+                    </Button>
+
+                </LinearLayout>
 
             </LinearLayout>
 
