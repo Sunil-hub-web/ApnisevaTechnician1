@@ -228,10 +228,11 @@ public class LoginPage extends AppCompatActivity {
                             String email = jsonObject_statues.getString("email");
                             String contact_no = jsonObject_statues.getString("contact_no");
                             String profile_image = jsonObject_statues.getString("profile_image");
+                            String commition = jsonObject_statues.getString("commition");
                             String password = binding.editPassword.getText().toString().trim();
 
                             Login_ModelClass login_modelClass = new Login_ModelClass(
-                                id,full_name,user_name,email,contact_no,profile_image,password
+                                id,full_name,user_name,email,contact_no,profile_image,password,commition
                             );
 
                             SharedPrefManager.getInstance(LoginPage.this).userLogin(login_modelClass);

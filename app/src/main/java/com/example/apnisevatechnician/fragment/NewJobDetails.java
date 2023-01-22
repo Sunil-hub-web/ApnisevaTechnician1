@@ -25,9 +25,12 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.apnisevatechnician.MainActivity;
+import com.example.apnisevatechnician.adapter.NewJobDetailAdapter;
 import com.example.apnisevatechnician.adapter.OrderDetailsAdapter;
 import com.example.apnisevatechnician.databinding.MyjobdetailsBinding;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.modelclass.OrderDetailsModel;
 
 import org.json.JSONArray;
@@ -42,7 +45,8 @@ public class NewJobDetails extends Fragment {
 
     MyjobdetailsBinding binding;
 
-    OrderDetailsAdapter orderDetailsAdapter;
+    //OrderDetailsAdapter orderDetailsAdapter;
+    NewJobDetailAdapter newJobDetailAdapter;
     LinearLayoutManager linearLayoutManager;
     ArrayList<OrderDetailsModel> orderDetailsModels;
     RecyclerView recyclerOrderDetails;
@@ -56,6 +60,10 @@ public class NewJobDetails extends Fragment {
         binding = MyjobdetailsBinding.inflate(getLayoutInflater(),container,false);
         View view = binding.getRoot();
 
+        MainActivity.text_name.setText("My Job");
+        userId = SharedPrefManager.getInstance(getContext()).getUser().getId();
+        getJobDetails(userId);
+
         return view;
     }
 
@@ -65,7 +73,7 @@ public class NewJobDetails extends Fragment {
         progressDialog.setMessage("Job Details Please Wait.....");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.getallOrder, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.New_asign_order, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -113,10 +121,10 @@ public class NewJobDetails extends Fragment {
                             }
 
                             linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-                            orderDetailsAdapter = new OrderDetailsAdapter(getContext(),orderDetailsModels);
+                            newJobDetailAdapter = new NewJobDetailAdapter(getContext(),orderDetailsModels);
                             binding.recyclerOrderDetails.setLayoutManager(linearLayoutManager);
                             binding.recyclerOrderDetails.setHasFixedSize(true);
-                            binding.recyclerOrderDetails.setAdapter(orderDetailsAdapter);
+                            binding.recyclerOrderDetails.setAdapter(newJobDetailAdapter);
 
                         }else{
 

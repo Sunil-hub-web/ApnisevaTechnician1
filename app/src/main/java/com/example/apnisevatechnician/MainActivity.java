@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.apnisevatechnician.databinding.ActivityMainBinding;
 import com.example.apnisevatechnician.databinding.NavigationdrawerBinding;
+import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.fragment.HomePage;
 import com.example.apnisevatechnician.fragment.MyJob;
 import com.example.apnisevatechnician.fragment.MyProfile;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     ActivityMainBinding binding;
     FragmentTransaction ft;
-    TextView nav_Home,nav_profile,nav_job,nav_transaction,nav_services,nav_reviews,nav_updateservices;
+    TextView nav_Home,nav_profile,nav_job,nav_transaction,nav_services,nav_reviews,nav_UserName,nav_MobileNo;
     public static DrawerLayout drawerLayout;
     public static TextView text_name;
     @Override
@@ -56,7 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_profile = header.findViewById(R.id.nav_profile);
         nav_Home = header.findViewById(R.id.nav_Home);
         nav_job = header.findViewById(R.id.nav_job);
-        nav_updateservices = header.findViewById(R.id.nav_updateservices);
+        nav_UserName = header.findViewById(R.id.nav_UserName);
+        nav_MobileNo = header.findViewById(R.id.nav_MobileNo);
+       // nav_updateservices = header.findViewById(R.id.nav_updateservices);
 
         ft = getSupportFragmentManager().beginTransaction();
         HomePage home = new HomePage();
@@ -64,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ft.addToBackStack(null);
         ft.commit();
         text_name.setText("Home");
+
+        nav_MobileNo.setText(SharedPrefManager.getInstance(this).getUser().getContact_no());
+        nav_UserName.setText(SharedPrefManager.getInstance(this).getUser().getFull_name());
 
         nav_Home.setOnClickListener(view1 -> {
 
@@ -101,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            text_name.setText("My Job");
        });
 
-        nav_updateservices.setOnClickListener(view1 -> {
+       /* nav_updateservices.setOnClickListener(view1 -> {
 
             binding.MyDrawer.closeDrawer(GravityCompat.START);
             ft = getSupportFragmentManager().beginTransaction();
@@ -111,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
 
 
-        });
+        });*/
 
     }
 

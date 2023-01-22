@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDF5F5F6">
+    android:background="#EDF5F5F6"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/ten"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="ExtraText">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -196,12 +199,14 @@
 
                 </androidx.recyclerview.widget.RecyclerView>
 
+                //Price Details
+
                 <RelativeLayout
                     android:id="@+id/total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
 
                     <LinearLayout
@@ -383,6 +388,8 @@
 
                 </RelativeLayout>
 
+                //Address Details
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -418,6 +425,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/otpVerifay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Verifay OTP"
@@ -428,10 +436,12 @@
 
                 </TextView>
 
+                // otpverifay
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/linVerifayOtp">
 
                     <EditText
                         android:id="@+id/edit_VerifayOTP"
@@ -453,7 +463,7 @@
                     <Button
                         android:id="@+id/btn_Verifay"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/forty"
                         android:layout_weight="1"
                         android:layout_marginLeft="@dimen/five"
                         android:layout_marginRight="@dimen/five"
@@ -468,11 +478,13 @@
                     </Button>
                 </LinearLayout>
 
+                //add additional services
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/lin_Services">
+                    android:id="@+id/lin_Services"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -492,7 +504,7 @@
                         android:background="@drawable/edit_background"
                         android:layout_marginLeft="@dimen/twenty"
                         android:layout_marginRight="@dimen/twenty"
-                        android:layout_marginTop="@dimen/fifty"
+                        android:layout_marginTop="@dimen/fifteen"
                         android:padding="@dimen/fifteen"
                         android:fontFamily="@font/inter_regular"
                         android:ems="10"
@@ -514,8 +526,8 @@
                         android:background="@drawable/edit_background"
                         android:layout_marginLeft="@dimen/twenty"
                         android:layout_marginRight="@dimen/twenty"
-                        android:layout_marginTop="@dimen/fifty"
                         android:padding="@dimen/fifteen"
+                        android:layout_marginTop="@dimen/ten"
                         android:fontFamily="@font/inter_regular"
                         android:ems="10"
                         android:hint="Enter Price"
@@ -545,6 +557,64 @@
                     </Button>
 
                 </LinearLayout>
+
+                //button details
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginBottom="@dimen/ten">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_submit1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cornerRadius="@dimen/ten"
+                        android:backgroundTint="#0A9F10"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="@dimen/ten"
+                        android:text="Remove Additional Bill"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/twelve_size"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_submit2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cornerRadius="@dimen/ten"
+                        android:backgroundTint="#E33629"
+                        android:layout_gravity="left"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/twelve_size"
+                        android:layout_marginLeft="@dimen/ten"
+                        android:layout_marginRight="@dimen/ten"
+                        android:text="Order Canceled"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cornerRadius="@dimen/ten"
+                    android:backgroundTint="#0A9F10"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginRight="@dimen/twenty"
+                    android:layout_marginBottom="@dimen/twenty"
+                    android:text="Work Started"
+                    android:padding="@dimen/ten"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/white"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

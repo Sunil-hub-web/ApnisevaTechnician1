@@ -8,6 +8,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/text_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:layout_gravity="right"
+            android:textSize="@dimen/twenty_five"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="#AFCEEF"
+            android:layout_margin="@dimen/textsize">
+
+        </TextView>
+
        <!-- <include layout="@layout/toolbar"></include>-->
 
         <ScrollView
@@ -18,7 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/forty"
-                android:layout_marginTop="@dimen/forty"
                 android:layout_marginEnd="@dimen/forty"
                 android:layout_marginBottom="@dimen/forty"
                 android:orientation="vertical">
@@ -35,7 +47,7 @@
                     android:id="@+id/edit_Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/fifty"
+                    android:layout_marginTop="@dimen/thirty"
                     android:background="@drawable/edit_background"
                     android:ems="10"
                     android:fontFamily="@font/inter_regular"
@@ -55,7 +67,7 @@
                     android:id="@+id/edit_Email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty_five"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:background="@drawable/edit_background"
                     android:ems="10"
                     android:fontFamily="@font/inter_regular"
@@ -75,7 +87,7 @@
                     android:id="@+id/edit_MobileNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty_five"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:background="@drawable/edit_background"
                     android:ems="10"
                     android:fontFamily="@font/inter_regular"
@@ -95,7 +107,7 @@
                     android:id="@+id/edit_Password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty_five"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:background="@drawable/edit_background"
                     android:drawableRight="@drawable/baseline_visibility_off"
                     android:ems="10"
@@ -112,12 +124,40 @@
 
                 </EditText>
 
+                <Spinner
+                    android:id="@+id/categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/edit_background"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:spinnerMode="dropdown"
+                    android:text="Please Select Your Area"
+                    android:textColor="@color/color5"
+                    android:textSize="@dimen/fifteen" />
+
+
+                <Spinner
+                    android:id="@+id/Workingcity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/edit_background"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:spinnerMode="dropdown"
+                    android:text="Please Select Your Area"
+                    android:textColor="@color/color5"
+                    android:textSize="@dimen/edittextsize" />
+
                 <Button
                     android:id="@+id/btn_Signin"
                     android:layout_width="@dimen/two_hundred"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/fifty"
+                    android:layout_marginTop="@dimen/thirty"
+                    android:layout_marginBottom="@dimen/thirty"
                     android:background="@drawable/button_background"
                     android:backgroundTint="@color/color1"
                     android:fontFamily="@font/inter_bold"

@@ -34,6 +34,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/nav_UserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
@@ -44,6 +45,7 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/nav_MobileNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_regular"
@@ -190,7 +192,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
+           <!-- <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ten">
@@ -311,7 +313,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/edittextsize"></TextView>
 
-            </RelativeLayout>
+            </RelativeLayout>-->
 
         </LinearLayout>
 

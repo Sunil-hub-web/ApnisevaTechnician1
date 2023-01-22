@@ -39,6 +39,15 @@ public class HomePage extends Fragment {
             ft.commit();
         });
 
+        binding.newJobDetails.setOnClickListener(view1 -> {
+
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            NewJobDetails newJobDetails = new NewJobDetails();
+            ft.replace(R.id.fram,newJobDetails);
+            ft.addToBackStack(null);
+            ft.commit();
+        });
+
         binding.userName.setText(SharedPrefManager.getInstance(getContext()).getUser().getFull_name());
 
         return view;

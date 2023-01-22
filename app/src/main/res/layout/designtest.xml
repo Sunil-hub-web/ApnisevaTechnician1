@@ -2,193 +2,172 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#EDF5F5F6">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true">
-
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="@dimen/ten"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <RelativeLayout
-                android:id="@+id/r8"
+            <EditText
+                android:id="@+id/edit_VerifayOTP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:background="@drawable/edit_background1"
+                android:ems="10"
+                android:fontFamily="@font/inter_regular"
+                android:hint="OTP"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/eight"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/edittextsize"
+                android:textStyle="normal"></EditText>
+
+            <Button
+                android:id="@+id/btn_Verifay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forty"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/five"
+                android:layout_marginRight="@dimen/five"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/color1"
+                android:fontFamily="@font/inter_light"
+                android:text="Verifay OTP"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize">
+
+
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/lin_Services">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Add Aditional Services"
+                android:textSize="@dimen/twenty"
+                android:layout_margin="@dimen/fifteen"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_Services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:layout_marginTop="@dimen/fifteen"
+                android:padding="@dimen/fifteen"
+                android:fontFamily="@font/inter_regular"
+                android:ems="10"
+                android:hint="EnterServices"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="10"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty_size"
+                android:textStyle="normal">
+
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/edit_Price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:padding="@dimen/fifteen"
                 android:layout_marginTop="@dimen/ten"
-                android:layout_marginRight="@dimen/ten">
+                android:fontFamily="@font/inter_regular"
+                android:ems="10"
+                android:hint="Enter Price"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty_size"
+                android:textStyle="normal">
 
-                <TextView
-                    android:id="@+id/textSubTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/twelve"
-                    android:text="Sub Total:"
-                    android:textColor="#595656"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/priceSymbol4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/seventy"
-                    android:layout_toRightOf="@+id/textSubTotal"
-                    android:text="Rs"
-                    android:textColor="#595656"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
+            </EditText>
 
-                <TextView
-                    android:id="@+id/subTotalPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ten"
-                    android:layout_toRightOf="@id/priceSymbol4"
-                    android:text="145.00"
-                    android:textColor="#595656"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/r7"
+            <Button
+                android:id="@+id/btn_AddServices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/r8"
-                android:layout_marginTop="@dimen/fifteen"
-                android:layout_marginRight="@dimen/ten">
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/color1"
+                android:layout_gravity="left"
+                android:layout_margin="@dimen/fifteen"
+                android:text="Add Additional Services"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white">
 
-                <TextView
-                    android:id="@+id/subTotal2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ten"
-                    android:text="Discount :"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/priceSymbol3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/seventy"
-                    android:layout_toRightOf="@+id/subTotal2"
-                    android:text="Rs"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
+            </Button>
 
-                <TextView
-                    android:id="@+id/TotalPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ten"
-                    android:layout_toRightOf="@id/priceSymbol3"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold"></TextView>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/r8"
-                android:layout_marginTop="@dimen/fifteen"
-                android:layout_marginRight="@dimen/ten">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/twenty">
 
-                <TextView
-                    android:id="@+id/subTotal21"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submit2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/thirty"
-                    android:text="GST :"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/priceSymbol31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/eighty"
-                    android:layout_toRightOf="@+id/subTotal21"
-                    android:text="Rs"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/TotalPrice1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    app:cornerRadius="@dimen/ten"
+                    android:backgroundTint="#0A9F10"
+                    android:layout_gravity="left"
                     android:layout_marginLeft="@dimen/ten"
-                    android:layout_toRightOf="@id/priceSymbol31"
-                    android:text="14.00"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
+                    android:text="Ordes Success"
+                    android:padding="@dimen/ten"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/white" />
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/r8"
-                android:layout_marginTop="@dimen/fifteen"
-                android:layout_marginRight="@dimen/ten">
-
-                <TextView
-                    android:id="@+id/subTotal3"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submit1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/thirty"
-                    android:text="Total :"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/priceSymbol2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/eighty"
-                    android:layout_toRightOf="@+id/subTotal3"
-                    android:text="Rs"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/TotalPrice6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    app:cornerRadius="@dimen/ten"
+                    android:backgroundTint="#E33629"
+                    android:layout_gravity="left"
+                    android:padding="@dimen/ten"
                     android:layout_marginLeft="@dimen/ten"
-                    android:layout_toRightOf="@id/priceSymbol2"
-                    android:text="145.00"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold" />
+                    android:layout_marginRight="@dimen/ten"
+                    android:text="Order Cancle"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/white" />
 
-            </RelativeLayout>
 
+            </LinearLayout>
 
         </LinearLayout>
 
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

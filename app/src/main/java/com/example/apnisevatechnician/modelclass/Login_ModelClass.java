@@ -2,10 +2,10 @@ package com.example.apnisevatechnician.modelclass;
 
 public class Login_ModelClass {
 
-    String id,full_name,user_name,email,contact_no,profile_image,password;
+    String id,full_name,user_name,email,contact_no,profile_image,password,commition;
 
     public Login_ModelClass(String id, String full_name, String user_name, String email, String contact_no,
-                            String profile_image,String password) {
+                            String profile_image,String password,String commition) {
         this.id = id;
         this.full_name = full_name;
         this.user_name = user_name;
@@ -13,6 +13,7 @@ public class Login_ModelClass {
         this.contact_no = contact_no;
         this.profile_image = profile_image;
         this.password = password;
+        this.commition = commition;
     }
 
     public String getId() {
@@ -69,5 +70,13 @@ public class Login_ModelClass {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCommition() {
+        return commition;
+    }
+
+    public void setCommition(String commition) {
+        this.commition = commition;
     }
 }

@@ -87,6 +87,12 @@ public class RegisterPage extends AppCompatActivity {
             }else if(binding.editConfirmPassword.getText().equals("")){
 
                 Toast.makeText(this, "Fill The Confirm Password", Toast.LENGTH_SHORT).show();
+            }else if(str_CityId.equals("")){
+
+                Toast.makeText(this, "select your city", Toast.LENGTH_SHORT).show();
+            }else if(str_CategoriesId.equals("")){
+
+                Toast.makeText(this, "select your city", Toast.LENGTH_SHORT).show();
             }else{
 
                 if(binding.editPassword.getText().toString().trim().
@@ -108,7 +114,7 @@ public class RegisterPage extends AppCompatActivity {
 
                 str_CityName = binding.Workingcity.getItemAtPosition(binding.Workingcity.getSelectedItemPosition()).toString();
 
-                if (str_CityName.equalsIgnoreCase("Select City")) {
+                if (str_CityName.equalsIgnoreCase("-- Select City---")) {
 
                     str_CityName = "";
 
@@ -131,7 +137,7 @@ public class RegisterPage extends AppCompatActivity {
 
                 str_CategoriesName = binding.categories.getItemAtPosition(binding.categories.getSelectedItemPosition()).toString();
 
-                if (str_CategoriesName.equalsIgnoreCase("Select City")) {
+                if (str_CategoriesName.equalsIgnoreCase("--- Select You Category ---")) {
 
                     str_CategoriesName = "";
 

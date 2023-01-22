@@ -18,6 +18,7 @@ public class SharedPrefManager {
     private static final String KEY_Email_Id = "keyemailid";
     private static final String KEY_password = "keypassword";
     private static final String KEY_Profile_Image = "keyprofileimage";
+    private static final String KEY_commition = "commition";
 
     private static SharedPrefManager mInstance;
     private static Context mCtx;
@@ -48,6 +49,7 @@ public class SharedPrefManager {
         editor.putString(KEY_mobile_number,     login_modelClass.getContact_no ());
         editor.putString(KEY_Profile_Image,                login_modelClass.getProfile_image ());
         editor.putString(KEY_password,                login_modelClass.getPassword ());
+        editor.putString(KEY_commition,                login_modelClass.getCommition ());
 
 
         editor.apply();
@@ -71,7 +73,8 @@ public class SharedPrefManager {
                 sharedPrefManager.getString(KEY_Email_Id, null),
                 sharedPrefManager.getString(KEY_mobile_number, null),
                 sharedPrefManager.getString(KEY_Profile_Image, null),
-                sharedPrefManager.getString(KEY_password, null)
+                sharedPrefManager.getString(KEY_password, null),
+                sharedPrefManager.getString(KEY_commition, null)
 
         );
 
