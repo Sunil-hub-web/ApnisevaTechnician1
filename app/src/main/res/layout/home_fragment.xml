@@ -116,7 +116,7 @@
                             android:fontFamily="@font/inter_semibold"
                             android:gravity="center"
                             android:padding="@dimen/five"
-                            android:text="New Jobs(0)"
+                            android:text="New Jobs"
                             android:textColor="@color/color2"
                             android:textSize="18sp" />
 

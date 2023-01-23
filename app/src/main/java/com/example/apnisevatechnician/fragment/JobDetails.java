@@ -63,7 +63,7 @@ public class JobDetails extends Fragment {
     SingleOrderAdapter singleOrderAdapter;
     AdavanceOrderAdapter adavanceOrderAdapter;
 
-    String str_gst,userId,orderId,cususer_id,commition;
+    String str_gst,userId,orderId,cususer_id,commition,verify_otp;
     Double d_TotalPrice = 0.0,d_TotalPrice1 = 0.0,d_price = 0.0,d_gst1 = 0.0,d_proceTotal1 = 0.0;
 
     @Nullable
@@ -93,8 +93,20 @@ public class JobDetails extends Fragment {
             userId = SharedPrefManager.getInstance(getContext()).getUser().getId();
             commition = SharedPrefManager.getInstance(getContext()).getUser().getCommition();
             orderId = arguments.get("orderId").toString();
+            verify_otp = arguments.get("verify_otp").toString();
 
             singleOrderDetails(userId, orderId);
+        }
+
+        if(verify_otp.equals("1")){
+
+            binding.linVerifayOtp.setVisibility(View.GONE);
+            binding.otpVerifay.setVisibility(View.GONE);
+
+        }else{
+
+            binding.btnSubmit12.setVisibility(View.GONE);
+            binding.btnSubmit2.setVisibility(View.GONE);
         }
 
         binding.btnAddServices.setOnClickListener(view1 -> {
@@ -133,17 +145,17 @@ public class JobDetails extends Fragment {
             }
         });
 
-        binding.btnSubmit1.setOnClickListener(view1 -> {
+        binding.btnSubmit12.setOnClickListener(view1 -> {
 
-            if(binding.btnSubmit1.getText().toString().trim().equals("Remove Additional Bill")){
+            if(binding.btnSubmit12.getText().toString().trim().equals("Remove Additional Bill")){
 
                 openDialog_Logout(userId,orderId);
 
-            }else if(binding.btnSubmit1.getText().toString().trim().equals("Work Started")){
+            }else if(binding.btnSubmit12.getText().toString().trim().equals("Work Started")){
 
                 workStarted("4",orderId);
 
-            }else if(binding.btnSubmit1.getText().toString().trim().equals("Work Completed")){
+            }else if(binding.btnSubmit12.getText().toString().trim().equals("Work Completed")){
 
                 String tAmount = binding.grandTotal.getText().toString().trim();
                 double d_tamount = Double.valueOf(tAmount);
@@ -165,7 +177,7 @@ public class JobDetails extends Fragment {
 
         binding.btnSubmit3.setOnClickListener(view1 -> {
 
-            binding.btnSubmit1.setText("Work Started");
+            binding.btnSubmit12.setText("Work Started");
             binding.btnSubmit3.setVisibility(View.GONE);
         });
 
@@ -242,7 +254,8 @@ public class JobDetails extends Fragment {
                         binding.subTotalPrice.setText(String.valueOf(dTotalPrice));
                         binding.TotalGST.setText(str_gst);
                         Double d_gst = Double.valueOf(str_gst);
-                        Double d_proceTotal = dTotalPrice + d_gst;
+                        Double d_GstCount = dTotalPrice * d_gst / 100;
+                        Double d_proceTotal = dTotalPrice + d_GstCount;
                         binding.grandTotal.setText(String.valueOf(d_proceTotal));
 
                         binding.bookingId.setText(order_id);
@@ -283,9 +296,10 @@ public class JobDetails extends Fragment {
                             double dTotalPrice1 = d_TotalPrice + d_TotalPrice1;
 
                             binding.subTotalPrice.setText(String.valueOf(dTotalPrice1));
-                            binding.TotalGST.setText(str_gst);
                             d_gst1 = Double.valueOf(str_gst);
-                            d_proceTotal1 = dTotalPrice1 + d_gst1;
+                            Double d_GstCount1 = dTotalPrice1 * d_gst1 / 100;
+                            d_proceTotal1 = dTotalPrice1 + d_GstCount1;
+                            binding.TotalGST.setText(String.valueOf(d_GstCount1));
                             binding.grandTotal.setText(String.valueOf(d_proceTotal1));
 
                             linearLayoutManager2 = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -296,9 +310,13 @@ public class JobDetails extends Fragment {
 
                         } else {
 
-                            // binding.recyclerAdvanceOrder.setVisibility(View.GONE);
+                             binding.recyclerAdvanceOrder.setVisibility(View.GONE);
+                             binding.advance.setVisibility(View.GONE);
+                             binding.linAdvanceOrder.setVisibility(View.GONE);
 
                             Toast.makeText(getActivity(), "Additional Services Not Available", Toast.LENGTH_SHORT).show();
+
+
                         }
 
                         for (int k = 0; k < jsonArray_address.length(); k++) {
@@ -383,8 +401,9 @@ public class JobDetails extends Fragment {
                         singleOrderDetails(userId,orderId);
 
                         binding.btnSubmit3.setVisibility(View.VISIBLE);
-                        binding.btnSubmit1.setText("Remove Additional Bill");
+                        binding.btnSubmit12.setText("Remove Additional Bill");
                         binding.btnSubmit3.setText("New Bill Accepted by user");
+
 
                     }else{
 
@@ -456,6 +475,9 @@ public class JobDetails extends Fragment {
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
                         singleOrderDetails(userId,orderId);
+
+                        binding.btnSubmit12.setVisibility(View.VISIBLE);
+                        binding.btnSubmit2.setVisibility(View.VISIBLE);
 
                         binding.linVerifayOtp.setVisibility(View.GONE);
                         binding.otpVerifay.setText("Customer Verified");
@@ -534,7 +556,7 @@ public class JobDetails extends Fragment {
 
                         singleOrderDetails(userId,orderId);
 
-                        binding.btnSubmit1.setText("Work Completed");
+                        binding.btnSubmit12.setText("Work Completed");
                     }else{
 
                         String messages = jsonObject.getString("messages");

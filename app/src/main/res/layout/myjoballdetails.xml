@@ -134,7 +134,7 @@
                     android:id="@+id/advance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Advance Order"
+                    android:text="Additional Order"
                     android:textSize="@dimen/twenty"
                     android:layout_margin="@dimen/ten"
                     android:fontFamily="@font/inter_bold"
@@ -566,8 +566,8 @@
                     android:layout_marginTop="@dimen/ten"
                     android:layout_marginBottom="@dimen/ten">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_submit1"
+                    <Button
+                       android:id="@+id/btn_submit12"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -575,13 +575,13 @@
                         android:backgroundTint="#0A9F10"
                         android:layout_gravity="left"
                         android:layout_marginLeft="@dimen/ten"
-                        android:text="Remove Additional Bill"
+                        android:text="Work Started"
                         android:padding="@dimen/ten"
                         android:textSize="@dimen/twelve_size"
                         android:fontFamily="@font/inter_bold"
                         android:textColor="@color/white" />
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                         android:id="@+id/btn_submit2"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -600,8 +600,8 @@
 
                 </LinearLayout>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_submit3"
+                <Button
+                   android:id="@+id/btn_submit3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cornerRadius="@dimen/ten"

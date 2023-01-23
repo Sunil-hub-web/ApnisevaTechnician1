@@ -34,7 +34,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginLeft="@dimen/five"
+                    android:layout_toLeftOf="@id/text_seealll"
                     android:layout_toRightOf="@id/booking1"
                     android:fontFamily="@font/inter_regular"
                     android:text="#1244"
@@ -51,9 +52,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/twenty"
                     android:fontFamily="@font/inter_bold"
-                    android:text="See All"
+                    android:text="View Details"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/textsize">
+                    android:textSize="@dimen/twelve_size">
 
                 </TextView>
 
@@ -68,32 +69,55 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="@dimen/twenty">
+                    android:layout_marginBottom="@dimen/twenty"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/twelve"
-                        android:weightSum="2">
+                        android:weightSum="4">
 
                         <TextView
-                            android:id="@+id/Service1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
-                            android:layout_weight="0.8"
+                            android:layout_weight="1"
                             android:fontFamily="@font/inter_regular"
-                            android:text="productname"
+                            android:text="Date"
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
                         </TextView>
 
                         <TextView
-                            android:id="@+id/text_productname"
+                            android:id="@+id/Date"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Rs 500000"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="@font/inter_regular"
                             android:textColor="@color/black"
@@ -111,20 +135,19 @@
                         android:weightSum="4">
 
                         <TextView
-                            android:id="@+id/user1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
-                            android:layout_weight="0.8"
+                            android:layout_weight="1.2"
                             android:fontFamily="@font/inter_regular"
-                            android:text="price : "
+                            android:text="Order Date"
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
                         </TextView>
 
                         <TextView
-                            android:id="@+id/price"
+                            android:id="@+id/OrderDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.2"
@@ -139,16 +162,16 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.7"
                             android:fontFamily="@font/inter_regular"
-                            android:text="qty : "
+                            android:text="status"
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
                         </TextView>
 
                         <TextView
-                            android:id="@+id/text_qty"
+                            android:id="@+id/text_status"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -161,7 +184,7 @@
 
                     </LinearLayout>
 
-                   <!-- <LinearLayout
+                    <!-- <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/twelve"

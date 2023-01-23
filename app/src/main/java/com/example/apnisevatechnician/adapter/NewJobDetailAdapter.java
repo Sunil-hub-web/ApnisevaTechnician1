@@ -27,6 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apnisevatechnician.R;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.fragment.JobDetails;
 import com.example.apnisevatechnician.modelclass.OrderDetailsModel;
 
@@ -59,9 +60,11 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
     public void onBindViewHolder(@NonNull NewJobDetailAdapter.ViewHolder holder, int position) {
 
         OrderDetailsModel order = orderDetailslist.get(position);
-        holder.text_productname.setText(order.getProductname());
-        holder.price.setText(order.getPrice());
-        holder.text_qty.setText(order.getQty());
+        holder.Date.setText(order.getDate());
+        holder.text_Time.setText(order.getTime());
+        holder.OrderDate.setText(order.getOrderDate());
+        holder.booking_Id.setText(order.getOrdersid());
+        holder.text_status.setText(order.getStatus());
         holder.booking_Id.setText(order.getOrdersid());
 
         holder.text_seealll.setOnClickListener(view -> {
@@ -78,7 +81,9 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
 
         holder.acceptbtn.setOnClickListener(view -> {
 
-            AcceptRejectOrder(order.getOrdersid(),order.getUser_id(),"1",view);
+            String userId = SharedPrefManager.getInstance(context).getUser().getId();
+
+            AcceptRejectOrder(order.getOrdersid(),userId,"1",view);
 
 
         });
@@ -100,19 +105,23 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text_productname,price,text_qty,booking_Id,text_seealll;
+        TextView Date,text_Time,OrderDate,text_status,booking_Id,text_seealll;
         Button acceptbtn,rejectbtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            text_productname = itemView.findViewById(R.id.text_productname);
-            price = itemView.findViewById(R.id.price);
-            text_qty = itemView.findViewById(R.id.text_qty);
             booking_Id = itemView.findViewById(R.id.booking_Id);
             text_seealll = itemView.findViewById(R.id.text_seealll);
             rejectbtn = itemView.findViewById(R.id.rejectbtn);
             acceptbtn = itemView.findViewById(R.id.acceptbtn);
+
+            Date = itemView.findViewById(R.id.Date);
+            text_Time = itemView.findViewById(R.id.text_Time);
+            OrderDate = itemView.findViewById(R.id.OrderDate);
+            booking_Id = itemView.findViewById(R.id.booking_Id);
+            text_status = itemView.findViewById(R.id.text_status);
+            text_seealll = itemView.findViewById(R.id.text_seealll);
         }
     }
 

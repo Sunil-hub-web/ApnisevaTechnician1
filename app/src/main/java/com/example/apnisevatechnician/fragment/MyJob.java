@@ -117,6 +117,8 @@ public class MyJob extends Fragment {
 
                             String orders_id = jsonObject_order.getString("orders_id");
                             String productname = jsonObject_order.getString("productname");
+                            String booking_date = jsonObject_order.getString("booking_date");
+                            String booking_time = jsonObject_order.getString("booking_time");
                             String qty = jsonObject_order.getString("qty");
                             String img = jsonObject_order.getString("img");
                             String price = jsonObject_order.getString("price");
@@ -124,9 +126,11 @@ public class MyJob extends Fragment {
                             String status_det = jsonObject_order.getString("status");
                             String user_id = jsonObject_order.getString("user_id");
                             String order_id = jsonObject_order.getString("order_id");
+                            String created_date = jsonObject_order.getString("created_date");
+                            String verify_otp = jsonObject_order.getString("verify_otp");
 
                             OrderDetailsModel orderDetailsModel = new OrderDetailsModel(
-                                    orders_id,productname,qty,img,price,user_id,payment_mode,status_det,order_id
+                                  orders_id,booking_date,booking_time,img,user_id,payment_mode,status_det,order_id,created_date,verify_otp
                             );
 
                             orderDetailsModels.add(orderDetailsModel);

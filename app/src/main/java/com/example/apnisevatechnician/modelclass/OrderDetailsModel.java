@@ -2,19 +2,19 @@ package com.example.apnisevatechnician.modelclass;
 
 public class OrderDetailsModel {
 
-    String orders_id,productname,qty,img,price,user_id,payment_mode,status,ordersid;
+    String orders_id,date,time,img,user_id,payment_mode,status,ordersid,orderDate,verify_otp;
 
-    public OrderDetailsModel(String orders_id, String productname, String qty, String img, String price,
-                             String user_id, String payment_mode, String status,String ordersid) {
+    public OrderDetailsModel(String orders_id, String date, String time, String img, String user_id, String payment_mode, String status, String ordersid, String orderDate,String verify_otp) {
         this.orders_id = orders_id;
-        this.productname = productname;
-        this.qty = qty;
+        this.date = date;
+        this.time = time;
         this.img = img;
-        this.price = price;
         this.user_id = user_id;
         this.payment_mode = payment_mode;
         this.status = status;
         this.ordersid = ordersid;
+        this.orderDate = orderDate;
+        this.verify_otp = verify_otp;
     }
 
     public String getOrders_id() {
@@ -25,20 +25,20 @@ public class OrderDetailsModel {
         this.orders_id = orders_id;
     }
 
-    public String getProductname() {
-        return productname;
+    public String getDate() {
+        return date;
     }
 
-    public void setProductname(String productname) {
-        this.productname = productname;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getQty() {
-        return qty;
+    public String getTime() {
+        return time;
     }
 
-    public void setQty(String qty) {
-        this.qty = qty;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getImg() {
@@ -47,14 +47,6 @@ public class OrderDetailsModel {
 
     public void setImg(String img) {
         this.img = img;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 
     public String getUser_id() {
@@ -87,5 +79,21 @@ public class OrderDetailsModel {
 
     public void setOrdersid(String ordersid) {
         this.ordersid = ordersid;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getVerify_otp() {
+        return verify_otp;
+    }
+
+    public void setVerify_otp(String verify_otp) {
+        this.verify_otp = verify_otp;
     }
 }

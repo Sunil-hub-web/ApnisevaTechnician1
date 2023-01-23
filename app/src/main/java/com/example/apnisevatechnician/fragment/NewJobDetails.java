@@ -112,9 +112,10 @@ public class NewJobDetails extends Fragment {
                                 String status_det = jsonObject_order.getString("status");
                                 String user_id = jsonObject_order.getString("user_id");
                                 String order_id = jsonObject_order.getString("order_id");
+                                String otpVerifay = jsonObject_order.getString("verify_otp");
 
                                 OrderDetailsModel orderDetailsModel = new OrderDetailsModel(
-                                        orders_id,productname,qty,img,price,user_id,payment_mode,status_det,order_id
+                                        orders_id,productname,qty,img,price,user_id,payment_mode,status_det,order_id,otpVerifay
                                 );
 
                                 orderDetailsModels.add(orderDetailsModel);
