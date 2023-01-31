@@ -43,7 +43,7 @@
 
             </TextView>
 
-            <TextView
+           <!-- <TextView
                 android:id="@+id/text_seealll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/textsize">
 
-            </TextView>
+            </TextView>-->
 
 
         </RelativeLayout>
@@ -74,89 +74,273 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twelve"
-                    android:weightSum="2">
+                    android:layout_marginBottom="@dimen/ten"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/Service1"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/fifteen"
-                        android:layout_weight="0.8"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="productname"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Booking Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
 
-                    <TextView
-                        android:id="@+id/text_productname"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/inter_regular"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        </TextView>
 
-                    </TextView>
+                        <TextView
+                            android:id="@+id/Date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <!--  <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/fifteen"
+                              android:layout_weight="0.8"
+                              android:fontFamily="@font/inter_regular"
+                              android:text="Time"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/textsize">
+
+                          </TextView>
+
+                          <TextView
+                              android:id="@+id/text_Time"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:fontFamily="@font/inter_regular"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/textsize">
+
+                          </TextView>-->
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twelve"
-                    android:weightSum="4">
-
-                    <TextView
-                        android:id="@+id/user1"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/fifteen"
-                        android:layout_weight="0.8"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="price : "
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <!--  <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/fifteen"
+                              android:layout_weight="1"
+                              android:fontFamily="@font/inter_regular"
+                              android:text="Booking Date"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/textsize">
 
-                    <TextView
-                        android:id="@+id/price"
-                        android:layout_width="0dp"
+                          </TextView>
+
+                          <TextView
+                              android:id="@+id/Date"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1.2"
+                              android:fontFamily="@font/inter_regular"
+                              android:text="Rs 500000"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/textsize">
+
+                          </TextView>-->
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Booking Time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.2"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Rs 500000"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Order Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
 
-                    <TextView
-                        android:layout_width="0dp"
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/OrderDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <!-- <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="@dimen/fifteen"
+                             android:layout_weight="0.7"
+                             android:fontFamily="@font/inter_regular"
+                             android:text="status"
+                             android:textColor="@color/black"
+                             android:textSize="@dimen/textsize">
+
+                         </TextView>
+
+                         <TextView
+                             android:id="@+id/text_status"
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:fontFamily="@font/inter_regular"
+                             android:textColor="@color/black"
+                             android:textSize="@dimen/textsize">
+
+                         </TextView>-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/fifteen"
-                        android:layout_weight="0.5"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="qty : "
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <!--     <TextView
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginLeft="@dimen/fifteen"
+                                 android:layout_weight="1.2"
+                                 android:fontFamily="@font/inter_regular"
+                                 android:text="Order Date"
+                                 android:textColor="@color/black"
+                                 android:textSize="@dimen/textsize">
 
-                    <TextView
-                        android:id="@+id/text_qty"
-                        android:layout_width="0dp"
+                             </TextView>
+
+                             <TextView
+                                 android:id="@+id/OrderDate"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1.2"
+                                 android:fontFamily="@font/inter_regular"
+                                 android:text="Rs 500000"
+                                 android:textColor="@color/black"
+                                 android:textSize="@dimen/textsize">
+
+                             </TextView>-->
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="status"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                    <!-- <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/inter_regular"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <TextView
+                            android:id="@+id/statues"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Status"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2">
+
+                            <TextView
+                                android:id="@+id/status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/statues_bg"
+                                android:fontFamily="@font/inter_regular"
+                                android:padding="@dimen/seven"
+                                android:text="paid"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textsize">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>-->
 
                 </LinearLayout>
 

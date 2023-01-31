@@ -46,7 +46,27 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
         holder.text_Time.setText(order.getTime());
         holder.OrderDate.setText(order.getOrderDate());
         holder.booking_Id.setText(order.getOrdersid());
-        holder.text_status.setText(order.getStatus());
+
+
+        String status_num = String.valueOf(order.getStatus());
+
+        if(status_num.equals("null")){
+            holder.text_status.setText("New Order");
+        }else if(status_num.equals("1")){
+            holder.text_status.setText("Vendor Assigned");
+        }else if(status_num.equals("2")){
+            holder.text_status.setText("Additional Bill Added");
+        }else if(status_num.equals("3")){
+            holder.text_status.setText("User Accept Additional bill");
+        }else if(status_num.equals("4")){
+            holder.text_status.setText("Work Start");
+        }else if(status_num.equals("5")){
+            holder.text_status.setText("Work Completed");
+        }else if(status_num.equals("6")){
+            holder.text_status.setText("Payment Collect");
+        }else if(status_num.equals("7")){
+            holder.text_status.setText("Canceled");
+        }
 
         holder.text_seealll.setOnClickListener(view -> {
 
@@ -56,6 +76,7 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
             bundle.putString("userId",order.getUser_id());
             bundle.putString("orderId",order.getOrdersid());
             bundle.putString("verify_otp",order.getVerify_otp());
+            bundle.putString("status",order.getStatus());
             myFragment.setArguments(bundle);
             activity.getSupportFragmentManager().beginTransaction().replace(R.id.fram, myFragment).addToBackStack(null).commit();
 

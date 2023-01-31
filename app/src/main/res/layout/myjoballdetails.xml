@@ -13,483 +13,480 @@
 
        <!-- <include layout="@layout/toolbar"></include>-->
 
-        <ScrollView
+        <!--Swipe Refresh Layout -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/ten"
-                android:orientation="vertical"
-                tools:ignore="ExtraText">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/forty"
-                    android:background="@drawable/myjobs_bg1"
-                    android:layout_margin="@dimen/three">
-
-                    <TextView
-                        android:id="@+id/booking1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen"
-                        android:text="Booking ID : "
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/edittextsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/booking_Id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/thirty"
-                        android:layout_toRightOf="@id/booking1"
-                        android:text="#1244"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/booking"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Booking Details"
-                    android:textSize="@dimen/twenty"
-                    android:layout_margin="@dimen/ten_size"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/black">
-                </TextView>
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@color/color1"
-                    android:padding="@dimen/five"
-                    android:id="@+id/lin_BookingDetails">
-
-                    <TextView
-                        android:id="@+id/text_productName1"
-                        android:layout_width="0dp"
-                        android:layout_weight="1.5"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Product Name : "
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Qty1"
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Qty"
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Price1"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Price"
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-
-
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/recyclerBookingDetails"
-                    android:visibility="visible">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-                <TextView
-                    android:id="@+id/advance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Additional Order"
-                    android:textSize="@dimen/twenty"
+                    android:layout_height="match_parent"
                     android:layout_margin="@dimen/ten"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/black">
+                    android:orientation="vertical"
+                    tools:ignore="ExtraText">
 
-                </TextView>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/forty"
+                        android:background="@drawable/myjobs_bg1"
+                        android:layout_margin="@dimen/three">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@color/color1"
-                    android:padding="@dimen/five"
-                    android:id="@+id/lin_AdvanceOrder">
+                        <TextView
+                            android:id="@+id/booking1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:text="Booking ID : "
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/edittextsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/booking_Id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/thirty"
+                            android:layout_toRightOf="@id/booking1"
+                            android:text="#1244"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                    </RelativeLayout>
 
                     <TextView
-                        android:id="@+id/text_productName"
-                        android:layout_width="0dp"
-                        android:layout_weight="1.5"
+                        android:id="@+id/booking"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Product Name : "
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
+                        android:text="Booking Details"
+                        android:textSize="@dimen/twenty"
+                        android:layout_margin="@dimen/ten_size"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black">
                     </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Qty"
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Qty"
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Price"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Price"
-                        android:textColor="@color/color6"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular">
-
-                    </TextView>
-
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/recyclerAdvanceOrder"
-                    android:visibility="visible">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-                //Price Details
-
-                <RelativeLayout
-                    android:id="@+id/total"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:visibility="visible">
-
 
                     <LinearLayout
-                        android:id="@+id/price"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="@dimen/ten"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:background="@color/color1"
+                        android:padding="@dimen/five"
+                        android:id="@+id/lin_BookingDetails">
 
-                        <RelativeLayout
-                            android:id="@+id/r8"
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/text_productName1"
+                            android:layout_width="0dp"
+                            android:layout_weight="1.5"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/ten"
-                            android:layout_marginRight="@dimen/ten">
+                            android:layout_centerVertical="true"
+                            android:text="Product Name : "
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
 
-                            <TextView
-                                android:id="@+id/textSubTotal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/twelve"
-                                android:text="Sub Total"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
+                        </TextView>
 
-                            <TextView
-                                android:id="@+id/priceSymbol4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/sixty"
-                                android:layout_toRightOf="@+id/textSubTotal"
-                                android:text="Rs"
-                                android:textColor="#595656"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/subTotalPrice"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/ten"
-                                android:layout_toRightOf="@id/priceSymbol4"
-                                android:text="145.00"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/r7"
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/text_Qty1"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/r8"
-                            android:layout_marginTop="@dimen/fifteen"
-                            android:layout_marginRight="@dimen/ten">
+                            android:layout_centerVertical="true"
+                            android:text="Qty"
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
 
-                            <TextView
-                                android:id="@+id/subTotal2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/ten"
-                                android:text="Discount :"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
+                        </TextView>
 
-                            <TextView
-                                android:id="@+id/priceSymbol3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/sixty"
-                                android:layout_toRightOf="@+id/subTotal2"
-                                android:text="Rs"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/TotalPrice"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/ten"
-                                android:layout_toRightOf="@id/priceSymbol3"
-                                android:text="0"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold"></TextView>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/text_Price1"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/r8"
-                            android:layout_marginTop="@dimen/fifteen"
-                            android:layout_marginRight="@dimen/ten">
+                            android:layout_centerVertical="true"
+                            android:text="Price"
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
 
-                            <TextView
-                                android:id="@+id/subTotal21"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/thirty"
-                                android:text="GST "
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
+                        </TextView>
 
-                            <TextView
-                                android:id="@+id/priceSymbol31"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/seventy"
-                                android:layout_toRightOf="@+id/subTotal21"
-                                android:text="Rs"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/TotalGST"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/ten"
-                                android:layout_toRightOf="@id/priceSymbol31"
-                                android:text="14.00"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/r8"
-                            android:layout_marginTop="@dimen/fifteen"
-                            android:layout_marginRight="@dimen/ten">
-
-                            <TextView
-                                android:id="@+id/subTotal3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/thirty"
-                                android:text="Total:"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/priceSymbol2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/seventy"
-                                android:layout_toRightOf="@+id/subTotal3"
-                                android:text="Rs"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/grandTotal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/ten"
-                                android:layout_toRightOf="@id/priceSymbol2"
-                                android:text="145.00"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/textsize"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
 
 
                     </LinearLayout>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recyclerBookingDetails"
+                        android:visibility="visible">
 
-                </RelativeLayout>
-
-                //Address Details
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address Details"
-                    android:textSize="@dimen/twenty"
-                    android:layout_margin="@dimen/fifteen"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/black">
-
-                </TextView>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    </androidx.recyclerview.widget.RecyclerView>
 
                     <TextView
-                        android:id="@+id/CompleteAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/hundred_twenty"
-                        android:layout_marginStart="@dimen/ten"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_marginEnd="@dimen/ten"
-                        android:layout_marginBottom="@dimen/ten"
-                        android:background="@drawable/edit_background1"
-                        android:gravity="start"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="@dimen/ten"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize"
-                        android:fontFamily="@font/inter_regular"/>
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/otpVerifay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Verifay OTP"
-                    android:textSize="@dimen/twenty"
-                    android:layout_margin="@dimen/fifteen"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/black">
-
-                </TextView>
-
-                // otpverifay
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/linVerifayOtp">
-
-                    <EditText
-                        android:id="@+id/edit_VerifayOTP"
-                        android:layout_width="0dp"
+                        android:id="@+id/advance"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.4"
-                        android:background="@drawable/edit_background1"
-                        android:ems="10"
-                        android:fontFamily="@font/inter_regular"
-                        android:hint="OTP"
-                        android:imeOptions="actionDone"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:padding="@dimen/eight"
-                        android:textColor="@color/color5"
-                        android:textSize="@dimen/edittextsize"
-                        android:textStyle="normal"></EditText>
+                        android:text="Additional Order"
+                        android:textSize="@dimen/twenty"
+                        android:layout_margin="@dimen/ten"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black">
 
-                    <Button
-                        android:id="@+id/btn_Verifay"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/forty"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="@dimen/five"
-                        android:layout_marginRight="@dimen/five"
-                        android:background="@drawable/button_background"
-                        android:backgroundTint="@color/color1"
-                        android:fontFamily="@font/inter_light"
-                        android:text="Verifay OTP"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textsize">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/color1"
+                        android:padding="@dimen/five"
+                        android:id="@+id/lin_AdvanceOrder">
+
+                        <TextView
+                            android:id="@+id/text_productName"
+                            android:layout_width="0dp"
+                            android:layout_weight="1.5"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Product Name : "
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Qty"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Qty"
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Price"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Price"
+                            android:textColor="@color/color6"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recyclerAdvanceOrder"
+                        android:visibility="visible">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    //Price Details
+
+                    <RelativeLayout
+                        android:id="@+id/total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="@dimen/ten"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginRight="@dimen/five">
+
+                                    <TextView
+                                        android:id="@+id/textSubTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sub Total"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/subTotal2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Discount :"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/subTotal21"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="GST :"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/subTotal3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total:"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/paidamount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Paid Amount:"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/dueamount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Due Amount:"
+                                        android:layout_margin="@dimen/five"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/textsize"
+                                        android:textStyle="bold" />
 
 
-                    </Button>
-                </LinearLayout>
+                                </LinearLayout>
 
-                //add additional services
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/lin_Services"
-                    android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/ten"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/five">
+
+                                    <RelativeLayout
+                                        android:id="@+id/r8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five">
+
+                                        <TextView
+                                            android:id="@+id/priceSymbol4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#595656"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/subTotalPrice"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/priceSymbol4"
+                                            android:text="145.00"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/r7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five">
+
+                                        <TextView
+                                            android:id="@+id/priceSymbol3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/disTotalPrice"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/priceSymbol3"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold"></TextView>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five">
+                                        <TextView
+                                            android:id="@+id/priceSymbol31"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/TotalGST"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/priceSymbol31"
+                                            android:text="14.00"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five">
+
+
+                                        <TextView
+                                            android:id="@+id/priceSymbol2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/grandTotal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/priceSymbol2"
+                                            android:text="145.00"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five"
+                                        android:id="@+id/relPaidAmount">
+
+                                        <TextView
+                                            android:id="@+id/paidSymbol"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/paidamtTotal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/paidSymbol"
+                                            android:text="145.00"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/five"
+                                        android:id="@+id/relDueAmount">
+
+                                        <TextView
+                                            android:id="@+id/dueSymbol"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rs"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/dueamountTotal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/ten"
+                                            android:layout_toRightOf="@id/dueSymbol"
+                                            android:text="145.00"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/textsize"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    //Address Details
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Aditional Services"
+                        android:text="Address Details"
                         android:textSize="@dimen/twenty"
                         android:layout_margin="@dimen/fifteen"
                         android:fontFamily="@font/inter_bold"
@@ -497,128 +494,227 @@
 
                     </TextView>
 
-                    <EditText
-                        android:id="@+id/edit_Services"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_background"
-                        android:layout_marginLeft="@dimen/twenty"
-                        android:layout_marginRight="@dimen/twenty"
-                        android:layout_marginTop="@dimen/fifteen"
-                        android:padding="@dimen/fifteen"
-                        android:fontFamily="@font/inter_regular"
-                        android:ems="10"
-                        android:hint="EnterServices"
-                        android:imeOptions="actionDone"
-                        android:inputType="text"
-                        android:maxLength="10"
-                        android:textColor="@color/color5"
-                        android:textSize="@dimen/twenty_size"
-                        android:textStyle="normal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/CompleteAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/hundred_twenty"
+                            android:layout_marginStart="@dimen/ten"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginEnd="@dimen/ten"
+                            android:layout_marginBottom="@dimen/ten"
+                            android:background="@drawable/edit_background1"
+                            android:gravity="start"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="@dimen/ten"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize"
+                            android:fontFamily="@font/inter_regular"/>
 
-                    </EditText>
+                    </RelativeLayout>
 
-                    <EditText
-                        android:id="@+id/edit_Price"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_background"
-                        android:layout_marginLeft="@dimen/twenty"
-                        android:layout_marginRight="@dimen/twenty"
-                        android:padding="@dimen/fifteen"
-                        android:layout_marginTop="@dimen/ten"
-                        android:fontFamily="@font/inter_regular"
-                        android:ems="10"
-                        android:hint="Enter Price"
-                        android:imeOptions="actionDone"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:textColor="@color/color5"
-                        android:textSize="@dimen/twenty_size"
-                        android:textStyle="normal">
-
-
-                    </EditText>
-
-                    <Button
-                        android:id="@+id/btn_AddServices"
+                    <TextView
+                        android:id="@+id/otpVerifay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_background"
-                        android:backgroundTint="@color/color1"
-                        android:layout_gravity="left"
+                        android:text="Verifay OTP"
+                        android:textSize="@dimen/twenty"
                         android:layout_margin="@dimen/fifteen"
-                        android:text="Add Additional Services"
                         android:fontFamily="@font/inter_bold"
-                        android:textColor="@color/white">
+                        android:textColor="@color/black">
+
+                    </TextView>
+
+                    // otpverifay
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/linVerifayOtp">
+
+                        <EditText
+                            android:id="@+id/edit_VerifayOTP"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.4"
+                            android:background="@drawable/edit_background1"
+                            android:ems="10"
+                            android:fontFamily="@font/inter_regular"
+                            android:hint="OTP"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:padding="@dimen/eight"
+                            android:textColor="@color/color5"
+                            android:textSize="@dimen/edittextsize"
+                            android:textStyle="normal"></EditText>
+
+                        <Button
+                            android:id="@+id/btn_Verifay"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/forty"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/five"
+                            android:layout_marginRight="@dimen/five"
+                            android:background="@drawable/button_background"
+                            android:backgroundTint="@color/color1"
+                            android:fontFamily="@font/inter_light"
+                            android:text="Verifay OTP"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize">
 
 
-                    </Button>
+                        </Button>
+                    </LinearLayout>
 
-                </LinearLayout>
+                    //add additional services
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/lin_Services"
+                        android:visibility="gone">
 
-                //button details
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/ten"
-                    android:layout_marginBottom="@dimen/ten">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Aditional Services"
+                            android:textSize="@dimen/twenty"
+                            android:layout_margin="@dimen/fifteen"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black">
+
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/edit_Services"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_background"
+                            android:layout_marginLeft="@dimen/twenty"
+                            android:layout_marginRight="@dimen/twenty"
+                            android:layout_marginTop="@dimen/fifteen"
+                            android:padding="@dimen/fifteen"
+                            android:fontFamily="@font/inter_regular"
+                            android:ems="10"
+                            android:hint="EnterServices"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLength="10"
+                            android:textColor="@color/color5"
+                            android:textSize="@dimen/twenty_size"
+                            android:textStyle="normal">
+
+
+                        </EditText>
+
+                        <EditText
+                            android:id="@+id/edit_Price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_background"
+                            android:layout_marginLeft="@dimen/twenty"
+                            android:layout_marginRight="@dimen/twenty"
+                            android:padding="@dimen/fifteen"
+                            android:layout_marginTop="@dimen/ten"
+                            android:fontFamily="@font/inter_regular"
+                            android:ems="10"
+                            android:hint="Enter Price"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:textColor="@color/color5"
+                            android:textSize="@dimen/twenty_size"
+                            android:textStyle="normal">
+
+
+                        </EditText>
+
+                        <Button
+                            android:id="@+id/btn_AddServices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_background"
+                            android:backgroundTint="@color/color1"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/fifteen"
+                            android:text="Add Additional Services"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/white">
+
+
+                        </Button>
+
+                    </LinearLayout>
+
+                    //button details
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/ten"
+                        android:layout_marginBottom="@dimen/ten">
+
+                        <Button
+                            android:id="@+id/btn_submit12"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            app:cornerRadius="@dimen/ten"
+                            android:backgroundTint="#0A9F10"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="@dimen/ten"
+                            android:text="Work Started"
+                            android:padding="@dimen/ten"
+                            android:textSize="@dimen/twelve_size"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_submit2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            app:cornerRadius="@dimen/ten"
+                            android:backgroundTint="#E33629"
+                            android:layout_gravity="left"
+                            android:padding="@dimen/ten"
+                            android:textSize="@dimen/twelve_size"
+                            android:layout_marginLeft="@dimen/ten"
+                            android:layout_marginRight="@dimen/ten"
+                            android:text="Order Canceled"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
 
                     <Button
-                       android:id="@+id/btn_submit12"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:id="@+id/btn_submit3"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cornerRadius="@dimen/ten"
                         android:backgroundTint="#0A9F10"
                         android:layout_gravity="left"
-                        android:layout_marginLeft="@dimen/ten"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:layout_marginRight="@dimen/twenty"
+                        android:layout_marginBottom="@dimen/twenty"
                         android:text="Work Started"
                         android:padding="@dimen/ten"
-                        android:textSize="@dimen/twelve_size"
                         android:fontFamily="@font/inter_bold"
-                        android:textColor="@color/white" />
-
-                    <Button
-                        android:id="@+id/btn_submit2"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        app:cornerRadius="@dimen/ten"
-                        android:backgroundTint="#E33629"
-                        android:layout_gravity="left"
-                        android:padding="@dimen/ten"
-                        android:textSize="@dimen/twelve_size"
-                        android:layout_marginLeft="@dimen/ten"
-                        android:layout_marginRight="@dimen/ten"
-                        android:text="Order Canceled"
-                        android:fontFamily="@font/inter_bold"
-                        android:textColor="@color/white" />
-
+                        android:textColor="@color/white"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 
-                <Button
-                   android:id="@+id/btn_submit3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cornerRadius="@dimen/ten"
-                    android:backgroundTint="#0A9F10"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:layout_marginRight="@dimen/twenty"
-                    android:layout_marginBottom="@dimen/twenty"
-                    android:text="Work Started"
-                    android:padding="@dimen/ten"
-                    android:fontFamily="@font/inter_bold"
-                    android:textColor="@color/white"
-                    android:visibility="gone"/>
+            </ScrollView>
 
-            </LinearLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        </ScrollView>
 
     </LinearLayout>
 

@@ -60,4 +60,8 @@ dependencies {
     implementation 'com.basgeekball:awesome-validation:4.3'
 
     implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    
 }

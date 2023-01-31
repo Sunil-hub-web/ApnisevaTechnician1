@@ -15,19 +15,18 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.apnisevatechnician.databinding.ActivityMainBinding;
-import com.example.apnisevatechnician.databinding.NavigationdrawerBinding;
 import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.fragment.HomePage;
 import com.example.apnisevatechnician.fragment.MyJob;
 import com.example.apnisevatechnician.fragment.MyProfile;
-import com.example.apnisevatechnician.fragment.UpdateServices;
+import com.example.apnisevatechnician.fragment.TransactionFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ActivityMainBinding binding;
     FragmentTransaction ft;
-    TextView nav_Home,nav_profile,nav_job,nav_transaction,nav_services,nav_reviews,nav_UserName,nav_MobileNo;
+    TextView nav_Home,nav_profile,nav_job,nav_logout,nav_UserName,nav_MobileNo,nav_transaction;
     public static DrawerLayout drawerLayout;
     public static TextView text_name;
     @Override
@@ -59,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_job = header.findViewById(R.id.nav_job);
         nav_UserName = header.findViewById(R.id.nav_UserName);
         nav_MobileNo = header.findViewById(R.id.nav_MobileNo);
+        nav_logout = header.findViewById(R.id.nav_logout);
+        nav_transaction = header.findViewById(R.id.nav_transaction);
        // nav_updateservices = header.findViewById(R.id.nav_updateservices);
 
         ft = getSupportFragmentManager().beginTransaction();
@@ -107,17 +108,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            text_name.setText("My Job");
        });
 
-       /* nav_updateservices.setOnClickListener(view1 -> {
+        nav_transaction.setOnClickListener(view1 -> {
 
             binding.MyDrawer.closeDrawer(GravityCompat.START);
             ft = getSupportFragmentManager().beginTransaction();
-            UpdateServices updateServices = new UpdateServices();
-            ft.replace(R.id.fram, updateServices);
+            TransactionFragment transactionFragment = new TransactionFragment();
+            ft.replace(R.id.fram, transactionFragment);
             ft.addToBackStack(null);
             ft.commit();
 
+            text_name.setText("Transaction");
+        });
 
-        });*/
+       nav_logout.setOnClickListener(view1 -> {
+
+           SharedPrefManager.getInstance(MainActivity.this).logout();
+       });
 
     }
 

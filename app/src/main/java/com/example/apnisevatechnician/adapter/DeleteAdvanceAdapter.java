@@ -23,6 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apnisevatechnician.R;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.fragment.JobDetails;
 import com.example.apnisevatechnician.modelclass.AdvancrOrderModel;
 
 import org.json.JSONException;
@@ -96,7 +97,7 @@ public class DeleteAdvanceAdapter extends RecyclerView.Adapter<DeleteAdvanceAdap
         progressDialog.setMessage("Remove Order Please Wait.....");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.verifyCustomer, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.remove_aditional_service, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -117,7 +118,6 @@ public class DeleteAdvanceAdapter extends RecyclerView.Adapter<DeleteAdvanceAdap
 
                         Toast.makeText(context, messstatus, Toast.LENGTH_SHORT).show();
 
-
                     }else{
 
                         String messages = jsonObject.getString("messages");
@@ -132,7 +132,6 @@ public class DeleteAdvanceAdapter extends RecyclerView.Adapter<DeleteAdvanceAdap
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
 
             }
         }, new Response.ErrorListener() {

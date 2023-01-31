@@ -18,4 +18,7 @@ public class AppUrl {
     public static final String completeorder = "http://collegeprojectz.com/apniseva/API/completeorder";
     public static final String profile_view = "http://collegeprojectz.com/apniseva/API/profile_view";
     public static final String updateprofile = "http://collegeprojectz.com/apniseva/API/updateprofile";
+    public static final String Aditional_Payment = "https://collegeprojectz.com/apniseva/API/Aditional_Payment";
+    public static final String remove_aditional_service = "https://collegeprojectz.com/apniseva/API/remove_aditional_service";
+    public static final String transaction_history = "http://collegeprojectz.com/apniseva/API/transaction_history";
 }

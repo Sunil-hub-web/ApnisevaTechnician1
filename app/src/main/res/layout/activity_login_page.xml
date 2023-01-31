@@ -60,7 +60,6 @@
                 android:hint="User Name"
                 android:imeOptions="actionDone"
                 android:inputType="text"
-                android:maxLength="10"
                 android:textColor="@color/color5"
                 android:textSize="@dimen/twenty_size"
                 android:textStyle="normal">

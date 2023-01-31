@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#EDF4F4F8">
+
+        <TextView
+            android:id="@+id/advance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collect Cash"
+            android:textSize="@dimen/twenty"
+            android:layout_margin="@dimen/ten"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are You sure Customer Paid Cash ?"
+            android:textSize="@dimen/textsize"
+            android:layout_margin="@dimen/ten"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black">
+
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_yes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/ten"
+                android:backgroundTint="#15AA1B"
+                android:layout_gravity="left"
+                android:padding="@dimen/ten"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:text="Yes"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_No"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/ten"
+                android:backgroundTint="#E33629"
+                android:layout_gravity="left"
+                android:padding="@dimen/ten"
+                android:text="No"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -6,7 +6,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fifteen"
+            android:layout_margin="@dimen/five"
             android:background="@drawable/edit_background1"
             android:orientation="vertical">
 
@@ -35,7 +35,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/five"
-                    android:layout_toLeftOf="@id/text_seealll"
                     android:layout_toRightOf="@id/booking1"
                     android:fontFamily="@font/inter_regular"
                     android:text="#1244"
@@ -44,7 +43,7 @@
 
                 </TextView>
 
-                <TextView
+               <!-- <TextView
                     android:id="@+id/text_seealll"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/twelve_size">
 
-                </TextView>
+                </TextView>-->
 
 
             </RelativeLayout>
@@ -76,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/twelve"
-                        android:weightSum="4">
+                        android:weightSum="2">
 
                         <TextView
                             android:layout_width="0dp"
@@ -84,7 +83,63 @@
                             android:layout_marginLeft="@dimen/fifteen"
                             android:layout_weight="1"
                             android:fontFamily="@font/inter_regular"
-                            android:text="Date"
+                            android:text="Booking Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/Date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                      <!--  <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
+
+                      <!--  <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Booking Date"
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
@@ -100,15 +155,15 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
-                        </TextView>
+                        </TextView>-->
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
-                            android:layout_weight="0.8"
+                            android:layout_weight="1"
                             android:fontFamily="@font/inter_regular"
-                            android:text="Time"
+                            android:text="Booking Time"
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
@@ -132,9 +187,65 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/twelve"
-                        android:weightSum="4">
+                        android:weightSum="2">
 
                         <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Order Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/OrderDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                       <!-- <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="status"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:weightSum="2">
+
+                   <!--     <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
@@ -156,13 +267,13 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/textsize">
 
-                        </TextView>
+                        </TextView>-->
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/fifteen"
-                            android:layout_weight="0.7"
+                            android:layout_weight="1"
                             android:fontFamily="@font/inter_regular"
                             android:text="status"
                             android:textColor="@color/black"
@@ -229,6 +340,28 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/forty"
+                android:background="@drawable/myjobbuttonback"
+                android:layout_margin="@dimen/three">
+
+
+                <TextView
+                    android:id="@+id/text_seealll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/twenty"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="View Details"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fifteen">
+
+                </TextView>
+
+
+            </RelativeLayout>
 
         </LinearLayout>
 
