@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -52,6 +55,8 @@ public class RegisterPage extends AppCompatActivity {
 
     String str_CityName,str_CityId,str_CategoriesName,str_CategoriesId;
 
+    boolean passwordVisiable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +71,78 @@ public class RegisterPage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getCityCategory();
+
+        binding.editPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                final int Right = 2;
+                if(event.getAction() == MotionEvent.ACTION_UP){
+
+                    if(event.getRawX() >= binding.editPassword.getRight() - binding.editPassword.getCompoundDrawables()[Right].getBounds().width()){
+
+                        int selection = binding.editPassword.getSelectionEnd();
+                        if(passwordVisiable){
+
+                            //set Drawable Image here
+                            binding.editPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility_off,0);
+                            // for show Password
+                            binding.editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisiable = false;
+                            binding.editPassword.setCompoundDrawablePadding(15);
+
+                        }else{
+
+                            //set Drawable Image here
+                            binding.editPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility,0);
+                            // for show Password
+                            binding.editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisiable = true;
+                            binding.editPassword.setCompoundDrawablePadding(15);
+                        }
+
+                        binding.editPassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+        binding.editConfirmPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                final int Right = 2;
+                if(event.getAction() == MotionEvent.ACTION_UP){
+
+                    if(event.getRawX() >= binding.editConfirmPassword.getRight() - binding.editConfirmPassword.getCompoundDrawables()[Right].getBounds().width()){
+
+                        int selection = binding.editConfirmPassword.getSelectionEnd();
+                        if(passwordVisiable){
+
+                            //set Drawable Image here
+                            binding.editConfirmPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility_off,0);
+                            // for show Password
+                            binding.editConfirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisiable = false;
+                            binding.editConfirmPassword.setCompoundDrawablePadding(15);
+
+                        }else{
+
+                            //set Drawable Image here
+                            binding.editConfirmPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility,0);
+                            // for show Password
+                            binding.editConfirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisiable = true;
+                            binding.editConfirmPassword.setCompoundDrawablePadding(15);
+                        }
+
+                        binding.editConfirmPassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         binding.btnCreate.setOnClickListener(view1 -> {
 
@@ -153,6 +230,13 @@ public class RegisterPage extends AppCompatActivity {
 
             }
         });
+
+        binding.regback.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,LoginPage.class)));
+
+        binding.termsofService.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,Termsandcondition.class)));
+
+        binding.privacyPolicy.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,PrivacyPolicyActivity.class)));
+
     }
 
     public void getCityCategory(){

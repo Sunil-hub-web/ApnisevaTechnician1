@@ -113,7 +113,7 @@
                 app:backgroundTint="@color/color1"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/twenty_five"
-                android:text="Login In"
+                android:text="Login"
                 android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white">
 

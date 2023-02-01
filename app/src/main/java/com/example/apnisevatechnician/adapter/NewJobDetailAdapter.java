@@ -104,7 +104,7 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
 
             String userId = SharedPrefManager.getInstance(context).getUser().getId();
 
-            AcceptRejectOrder(order.getOrdersid(),userId,"1",view);
+            AcceptRejectOrder(order.getOrdersid(),userId,"1",view,order.getVerify_otp(),order.getStatus());
 
 
         });
@@ -113,7 +113,7 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
             @Override
             public void onClick(View view) {
 
-                AcceptRejectOrder(order.getOrdersid(),order.getUser_id(),"2",view);
+                AcceptRejectOrder(order.getOrdersid(),order.getUser_id(),"2",view,order.getVerify_otp(),order.getStatus());
             }
         });
 
@@ -146,7 +146,7 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
         }
     }
 
-    public void AcceptRejectOrder(String order_id,String user_id,String status_id,View view){
+    public void AcceptRejectOrder(String order_id,String user_id,String status_id,View view,String verifyOtp,String statues){
 
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Accept Order Please Wait.....");
@@ -180,6 +180,8 @@ public class NewJobDetailAdapter extends RecyclerView.Adapter<NewJobDetailAdapte
                         Bundle bundle=new Bundle();
                         bundle.putString("userId",user_id);
                         bundle.putString("orderId",order_id);
+                        bundle.putString("verify_otp",verifyOtp);
+                        bundle.putString("status",statues);
                         myFragment.setArguments(bundle);
                         activity.getSupportFragmentManager().beginTransaction().replace(R.id.fram, myFragment).addToBackStack(null).commit();
 

@@ -317,8 +317,8 @@ public class JobDetails extends Fragment {
             @Override
             public void onRefresh() {
 
-                singleOrderDetails(venderId, orderId);
-                singleOrderAdapter.notifyDataSetChanged();
+               /* singleOrderDetails(venderId, orderId);
+                singleOrderAdapter.notifyDataSetChanged();*/
                 binding.refreshLayout.setRefreshing(false);
             }
         });
@@ -1381,6 +1381,7 @@ public class JobDetails extends Fragment {
                         singleOrderDetails(venderId,orderId);
 
                         binding.btnSubmit12.setVisibility(View.GONE);
+                        binding.btnSubmit2.setVisibility(View.GONE);
                         binding.btnSubmit3.setVisibility(View.GONE);
 
                         binding.linVerifayOtp.setVisibility(View.GONE);

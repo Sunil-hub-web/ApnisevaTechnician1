@@ -61,7 +61,7 @@ public class ForgetPassword extends AppCompatActivity {
     public void forgetPassword(String MobileNo){
 
         ProgressDialog progressDialog = new ProgressDialog(ForgetPassword.this);
-        progressDialog.setMessage("Login Please Wait.....");
+        progressDialog.setMessage("Send OTP Please Wait.....");
         progressDialog.show();
 
 
@@ -90,6 +90,7 @@ public class ForgetPassword extends AppCompatActivity {
                         Intent intent = new Intent(ForgetPassword.this,VerificationCode.class);
                         intent.putExtra("contact_otp",contact_otp);
                         intent.putExtra("login_otp",login_otp);
+                        intent.putExtra("MobileNo",MobileNo);
                         startActivity(intent);
 
                     }else{

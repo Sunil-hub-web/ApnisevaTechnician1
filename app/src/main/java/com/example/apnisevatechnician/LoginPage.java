@@ -57,6 +57,42 @@ public class LoginPage extends AppCompatActivity {
         getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        binding.editPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                final int Right = 2;
+                if(event.getAction() == MotionEvent.ACTION_UP){
+
+                    if(event.getRawX() >= binding.editPassword.getRight() - binding.editPassword.getCompoundDrawables()[Right].getBounds().width()){
+
+                        int selection = binding.editPassword.getSelectionEnd();
+                        if(passwordVisiable){
+
+                            //set Drawable Image here
+                            binding.editPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility_off,0);
+                            // for show Password
+                            binding.editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisiable = false;
+                            binding.editPassword.setCompoundDrawablePadding(15);
+
+                        }else{
+
+                            //set Drawable Image here
+                            binding.editPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.baseline_visibility,0);
+                            // for show Password
+                            binding.editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisiable = true;
+                            binding.editPassword.setCompoundDrawablePadding(15);
+                        }
+
+                        binding.editPassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

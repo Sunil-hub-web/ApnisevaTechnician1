@@ -115,6 +115,8 @@ public class MyProfile extends Fragment {
                 edit_Email.setEnabled(true);
                 edit_Password.setEnabled(true);
                 btn_Signin.setEnabled(true);
+                categories.setEnabled(true);
+                Workingcity.setEnabled(true);
 
                 text_edit.setTextColor(ContextCompat.getColor(getActivity(),R.color.color3));
 
@@ -422,6 +424,9 @@ public class MyProfile extends Fragment {
                             edit_Email.setEnabled(false);
                             edit_Password.setEnabled(false);
                             btn_Signin.setEnabled(false);
+                            categories.setEnabled(false);
+                            Workingcity.setEnabled(false);
+
 
                         }
                     }else{
