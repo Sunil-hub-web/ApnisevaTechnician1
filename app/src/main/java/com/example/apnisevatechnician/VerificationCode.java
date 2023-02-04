@@ -68,7 +68,11 @@ public class VerificationCode extends AppCompatActivity {
 
             if (otp.equals(login_otp)) {
 
-                startActivity(new Intent(VerificationCode.this, UpdatePasswordActivity.class));
+               // startActivity(new Intent(VerificationCode.this, UpdatePasswordActivity.class));
+
+                Intent intent = new Intent(VerificationCode.this,UpdatePasswordActivity.class);
+                intent.putExtra("MobileNo",MobileNo);
+                startActivity(intent);
 
             } else {
 

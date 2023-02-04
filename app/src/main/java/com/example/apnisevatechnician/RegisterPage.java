@@ -369,8 +369,11 @@ public class RegisterPage extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
+                Log.d("sunilregister",response.toString());
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
+
                     String status = jsonObject.getString("status");
 
                     if(status.equals("200")){

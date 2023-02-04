@@ -75,7 +75,7 @@ public class MyProfile extends Fragment {
     ArrayList<String> categoryname = new ArrayList<>();
     HashMap<String,String> name_category = new HashMap<>();
 
-    String str_CityName,str_CityId,str_CategoriesName,str_CategoriesId,venderId,usernamer;
+    String str_CityName,str_CityId,str_CategoriesName,str_CategoriesId,venderId,usernamer,category_Name,city_name;
 
     Spinner categories,Workingcity;
 
@@ -301,8 +301,9 @@ public class MyProfile extends Fragment {
                             R.layout.spinnerfront2, cityname);
                     dataAdapterCity.setDropDownViewResource(R.layout.spinneritem);
                     Workingcity.setAdapter(dataAdapterCity);
-                    Workingcity.setSelection(-1,true);
-
+                   // Workingcity.setSelection(-1,true);
+                    int index=selectSpinnerValue1(cityname,city_name);
+                    Workingcity.setSelection(index,true);
 
                     categoryModelClasses = new ArrayList<>();
                     JSONArray jsonArray_category = new JSONArray(allcategory);
@@ -323,7 +324,9 @@ public class MyProfile extends Fragment {
                             R.layout.spinnerfront2, categoryname);
                     dataAdapterCategories.setDropDownViewResource(R.layout.spinneritem);
                     categories.setAdapter(dataAdapterCategories);
-                    categories.setSelection(-1,true);
+                    //categories.setSelection(-1,true);
+                    int index1 = selectSpinnerValue(categoryname,category_Name);
+                    categories.setSelection(index1,true);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -429,6 +432,29 @@ public class MyProfile extends Fragment {
 
 
                         }
+
+                        String vendor_city = jsonObject_sataues.getString("vendor_city");
+                        String vendor_category = jsonObject_sataues.getString("vendor_category");
+
+                        JSONArray jsonArray_city = new JSONArray(vendor_city);
+                        JSONArray jsonArray_category = new JSONArray(vendor_category);
+
+                        for(int j=0;j<jsonArray_city.length();j++){
+
+                            JSONObject jsonObject_city = jsonArray_city.getJSONObject(0);
+
+                            city_name = jsonObject_city.getString("city_name");
+                            str_CityId = jsonObject_city.getString("city_id");
+                        }
+
+                        for(int k=0;k<jsonArray_category.length();k++){
+
+                            JSONObject jsonObject_category = jsonArray_category.getJSONObject(0);
+
+                            category_Name = jsonObject_category.getString("cat_name");
+                            str_CategoriesId = jsonObject_category.getString("cat_id");
+                        }
+
                     }else{
 
                         String error = jsonObject.getString("error");
@@ -569,6 +595,30 @@ public class MyProfile extends Fragment {
         requestQueue.getCache().clear();
         requestQueue.add(stringRequest);
 
+    }
+
+    private int selectSpinnerValue( ArrayList<String> ListSpinner,String myString)
+    {
+        int index1 = 0;
+        for(int i = 0; i < ListSpinner.size(); i++){
+            if(ListSpinner.get(i).equals(myString)){
+                index1=i;
+                break;
+            }
+        }
+        return index1;
+    }
+
+    private int selectSpinnerValue1( ArrayList<String> ListSpinner,String myString)
+    {
+        int index = 0;
+        for(int j = 0; j < ListSpinner.size(); j++){
+            if(ListSpinner.get(j).equals(myString)){
+                index=j;
+                break;
+            }
+        }
+        return index;
     }
 
 }
