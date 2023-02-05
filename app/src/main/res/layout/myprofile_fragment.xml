@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:text="Edit"
             android:layout_gravity="right"
-            android:textSize="@dimen/twenty_five"
+            android:textSize="@dimen/twenty"
             android:fontFamily="@font/inter_bold"
             android:textColor="#AFCEEF"
             android:layout_margin="@dimen/textsize">

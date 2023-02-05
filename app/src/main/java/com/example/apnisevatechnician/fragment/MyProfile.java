@@ -242,8 +242,9 @@ public class MyProfile extends Fragment {
                    String str_mobile = edit_MobileNo.getText().toString().trim();
                    String str_email = edit_Email.getText().toString().trim();
                    String str_password = edit_Password.getText().toString().trim();
+                   String password = SharedPrefManager.getInstance(getContext()).getUser().getPassword();
 
-                   updateProfile(venderId,str_name,str_email,str_mobile,str_CityId,str_CategoriesId,usernamer);
+                   updateProfile(venderId,str_name,str_email,str_mobile,str_CityId,str_CategoriesId,usernamer,password);
 
                }
 
@@ -313,9 +314,14 @@ public class MyProfile extends Fragment {
                         String cat_id = jsonObject_categ.getString("cat_id");
                         String cat_name = jsonObject_categ.getString("cat_name");
                         String status_cate = jsonObject_categ.getString("status");
+                        String parent_id = jsonObject_categ.getString("parent_id");
 
-                        categoryname.add(cat_name);
-                        name_category.put(cat_name,cat_id);
+                        if(parent_id.equals("0")){
+
+                            categoryname.add(cat_name);
+                            name_category.put(cat_name,cat_id);
+                        }
+
                     }
 
                     categoryname.add(0,"--- Select You Category ---");
@@ -523,7 +529,7 @@ public class MyProfile extends Fragment {
     }
 
     public void updateProfile(String id, String name, String email, String contact, String city,
-                              String category, String username){
+                              String category, String username, String password){
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Update Profile Please Wait.....");
@@ -550,6 +556,7 @@ public class MyProfile extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
+                        getUserProfile(id);
 
                     }else{
 
@@ -587,6 +594,7 @@ public class MyProfile extends Fragment {
                 params.put("city", city);
                 params.put("category", category);
                 params.put("username", username);
+                params.put("password", password);
                 return params;
             }
         };

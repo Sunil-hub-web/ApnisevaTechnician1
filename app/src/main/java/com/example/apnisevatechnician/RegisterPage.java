@@ -233,6 +233,8 @@ public class RegisterPage extends AppCompatActivity {
 
         binding.regback.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,LoginPage.class)));
 
+        binding.textSignIn.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,LoginPage.class)));
+
         binding.termsofService.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,Termsandcondition.class)));
 
         binding.privacyPolicy.setOnClickListener(view1 ->startActivity(new Intent(RegisterPage.this,PrivacyPolicyActivity.class)));
@@ -298,9 +300,14 @@ public class RegisterPage extends AppCompatActivity {
                         String cat_id = jsonObject_categ.getString("cat_id");
                         String cat_name = jsonObject_categ.getString("cat_name");
                         String status_cate = jsonObject_categ.getString("status");
+                        String parent_id = jsonObject_categ.getString("parent_id");
 
-                        categoryname.add(cat_name);
-                        name_category.put(cat_name,cat_id);
+                        if(parent_id.equals("0")){
+
+                            categoryname.add(cat_name);
+                            name_category.put(cat_name,cat_id);
+                        }
+
                     }
 
                     categoryname.add(0,"--- Select You Category ---");

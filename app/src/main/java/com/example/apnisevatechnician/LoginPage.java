@@ -276,8 +276,13 @@ public class LoginPage extends AppCompatActivity {
                             startActivity(new Intent(LoginPage.this,MainActivity.class));
                         }
                     }else{
+                        String error = jsonObject.getString("error");
+                        String messages = jsonObject.getString("messages");
+                        JSONObject jsonObject_message = new JSONObject(messages);
+                        String responsecode = jsonObject_message.getString("responsecode");
+                        String statusArray = jsonObject_message.getString("status");
 
-                        Toast.makeText(LoginPage.this, "Not Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginPage.this, statusArray, Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
