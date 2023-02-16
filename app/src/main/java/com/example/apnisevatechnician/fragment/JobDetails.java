@@ -68,9 +68,12 @@ public class JobDetails extends Fragment {
     AdavanceOrderAdapter adavanceOrderAdapter;
     Dialog dialogadditional;
 
-    String str_gst, venderId,orderId,cususer_id,commition,verify_otp,status,user_Id,transaction_id,payment_id,status_valid,coupon_amnt;
-    Double d_TotalPrice = 0.00,d_TotalPrice1 = 0.00,d_price = 0.00,d_gst1 = 0.00,
-            d_proceTotal1 = 0.00,transAmount = 0.00,dTotalPrice_c;
+    String str_gst, venderId, orderId, cususer_id, commition, verify_otp, status, user_Id, transaction_id, payment_id, status_valid, coupon_amnt;
+
+    Double d_price = 0.00, d_TotalPriceBooking = 0.00, d_TotalPriceAdvance = 0.00, d_TotalPrice1 = 0.00,
+            transAmount = 0.00, d_dTotalPrice_c = 0.00, d_gst, d_GstCount = 0.00, d_proceTotal = 0.00,
+            dTotalPrice_c = 0.00, dTotalPrice1 = 0.00, d_gst1, d_GstCount1 = 0.00, d_proceTotal1 = 0.00,
+            d_dueamount = 0.00,grandtotaldue = 0.00;
 
     @Nullable
     @Override
@@ -107,7 +110,7 @@ public class JobDetails extends Fragment {
             singleOrderDetails(venderId, orderId);
         }
 
-        if(status.equals("null")){
+        if (status.equals("null")) {
 
             binding.linVerifayOtp.setVisibility(View.VISIBLE);
             binding.otpVerifay.setVisibility(View.VISIBLE);
@@ -116,10 +119,9 @@ public class JobDetails extends Fragment {
             binding.btnSubmit2.setVisibility(View.GONE);
             binding.btnSubmit3.setVisibility(View.GONE);
 
-        }
-        else if(status.equals("1")){
+        } else if (status.equals("1")) {
 
-            if(verify_otp.equals("1")){
+            if (verify_otp.equals("1")) {
 
                 binding.btnSubmit12.setVisibility(View.VISIBLE);
                 binding.btnSubmit2.setVisibility(View.VISIBLE);
@@ -130,8 +132,7 @@ public class JobDetails extends Fragment {
                 binding.otpVerifay.setTextColor(ContextCompat.getColor(getContext(), R.color.teal_200));
                 binding.linServices.setVisibility(View.VISIBLE);
 
-            }
-            else{
+            } else {
 
                 binding.linVerifayOtp.setVisibility(View.VISIBLE);
                 binding.otpVerifay.setVisibility(View.VISIBLE);
@@ -141,8 +142,7 @@ public class JobDetails extends Fragment {
                 binding.linServices.setVisibility(View.GONE);
             }
 
-        }
-        else if(status.equals("2")){
+        } else if (status.equals("2")) {
 
             binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
@@ -155,8 +155,7 @@ public class JobDetails extends Fragment {
             binding.btnSubmit12.setText("Remove Additional Bill");
             binding.btnSubmit3.setText("New Bill Accepted by user");
 
-        }
-        else if(status.equals("3")){
+        } else if (status.equals("3")) {
 
             binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
@@ -167,8 +166,7 @@ public class JobDetails extends Fragment {
 
             binding.btnSubmit12.setText("Work Started");
 
-        }
-        else if(status.equals("4")){
+        } else if (status.equals("4")) {
 
             binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
@@ -179,10 +177,9 @@ public class JobDetails extends Fragment {
 
             binding.btnSubmit12.setText("Work Completed");
 
-        }
-        else if(status.equals("5")){
+        } else if (status.equals("5")) {
 
-            if(binding.dueamountTotal.getText().toString().equals("0.0")){
+            if (binding.dueamountTotal.getText().toString().equals("0.0")) {
 
                 binding.linVerifayOtp.setVisibility(View.GONE);
                 binding.otpVerifay.setVisibility(View.GONE);
@@ -197,7 +194,7 @@ public class JobDetails extends Fragment {
                 binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color1));
                 binding.btnSubmit2.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color4));
 
-            }else{
+            } else {
 
                 binding.linVerifayOtp.setVisibility(View.GONE);
                 binding.otpVerifay.setVisibility(View.GONE);
@@ -214,9 +211,7 @@ public class JobDetails extends Fragment {
             }
 
 
-
-        }
-        else if(status.equals("6")){
+        } else if (status.equals("6")) {
 
             binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
@@ -225,8 +220,7 @@ public class JobDetails extends Fragment {
             binding.btnSubmit2.setVisibility(View.GONE);
             binding.btnSubmit3.setVisibility(View.GONE);
 
-        }
-        else if(status.equals("7")){
+        } else if (status.equals("7")) {
 
             binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
@@ -240,20 +234,20 @@ public class JobDetails extends Fragment {
 
         binding.btnAddServices.setOnClickListener(view1 -> {
 
-            if(binding.editServices.getText().toString().trim().equals("")){
+            if (binding.editServices.getText().toString().trim().equals("")) {
 
                 Toast.makeText(getActivity(), "Add Service Details", Toast.LENGTH_SHORT).show();
 
-            }else if(binding.editPrice.getText().toString().trim().equals("")){
+            } else if (binding.editPrice.getText().toString().trim().equals("")) {
 
                 Toast.makeText(getActivity(), "Add Service Price", Toast.LENGTH_SHORT).show();
 
-            }else{
+            } else {
 
                 String strservices = binding.editServices.getText().toString().trim();
                 String strprice = binding.editPrice.getText().toString().trim();
 
-                addServices(orderId,venderId,strservices,strprice);
+                addServices(orderId, venderId, strservices, strprice);
 
             }
         });
@@ -262,33 +256,33 @@ public class JobDetails extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(binding.editVerifayOTP.getText().toString().trim().equals("")){
+                if (binding.editVerifayOTP.getText().toString().trim().equals("")) {
 
                     Toast.makeText(getActivity(), "Enter OTP", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
 
                     String strOTP = binding.editVerifayOTP.getText().toString().trim();
 
-                    verifayOtp(venderId,orderId,strOTP);
+                    verifayOtp(venderId, orderId, strOTP);
                 }
             }
         });
 
         binding.btnSubmit12.setOnClickListener(view1 -> {
 
-            if(binding.btnSubmit12.getText().toString().trim().equals("Remove Additional Bill")){
+            if (binding.btnSubmit12.getText().toString().trim().equals("Remove Additional Bill")) {
 
-                openDialog_Logout(venderId,orderId);
+                openDialog_Logout(venderId, orderId);
 
-            }else if(binding.btnSubmit12.getText().toString().trim().equals("Work Started")){
+            } else if (binding.btnSubmit12.getText().toString().trim().equals("Work Started")) {
 
                 workstarted_Dialog();
 
-            }else if(binding.btnSubmit12.getText().toString().trim().equals("Work Completed")){
+            } else if (binding.btnSubmit12.getText().toString().trim().equals("Work Completed")) {
 
                 completework_Dialog();
 
-            }else if(binding.btnSubmit12.getText().toString().trim().equals("Pay Online")){
+            } else if (binding.btnSubmit12.getText().toString().trim().equals("Pay Online")) {
 
                 collectcash_Dialog();
 
@@ -297,11 +291,11 @@ public class JobDetails extends Fragment {
 
         binding.btnSubmit2.setOnClickListener(view1 -> {
 
-            if(binding.btnSubmit2.getText().toString().trim().equals("Collect Cash")){
+            if (binding.btnSubmit2.getText().toString().trim().equals("Collect Cash")) {
 
                 collectcash_Dialog();
 
-            }else{
+            } else {
 
                 ordercancle_Dialog();
             }
@@ -335,6 +329,23 @@ public class JobDetails extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.getsingleOrder, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+
+                d_price = 0.00;
+                d_TotalPriceBooking = 0.00;
+                d_TotalPriceAdvance = 0.00;
+                d_TotalPrice1 = 0.00;
+                transAmount = 0.00;
+                d_dTotalPrice_c = 0.00;
+                d_gst = 0.00;
+                d_GstCount = 0.00;
+                d_proceTotal = 0.00;
+                dTotalPrice_c = 0.00;
+                dTotalPrice1 = 0.00;
+                d_gst1 = 0.00;
+                d_GstCount1 = 0.00;
+                d_proceTotal1 = 0.00;
+                d_dueamount = 0.00;
+                grandtotaldue = 0.00;
 
                 progressDialog.dismiss();
 
@@ -395,18 +406,19 @@ public class JobDetails extends Fragment {
                             singleOrderDetail.add(singleOrderDetailsModel);
 
                             d_price = Double.valueOf(price);
-                            d_TotalPrice = d_TotalPrice + d_price;
+                            d_TotalPriceBooking = d_TotalPriceBooking + d_price;
+
                         }
 
-                        double dTotalPrice = d_TotalPrice;
-                        Double d_dTotalPrice_c = Double.valueOf(coupon_amnt);
-                        dTotalPrice_c = dTotalPrice - d_dTotalPrice_c;
+                        d_dTotalPrice_c = Double.valueOf(coupon_amnt);
+                        dTotalPrice_c = d_TotalPriceBooking - d_dTotalPrice_c;
 
                         binding.disTotalPrice.setText(String.valueOf(d_dTotalPrice_c));
-                        binding.subTotalPrice.setText(String.valueOf(dTotalPrice));
-                        Double d_gst = Double.valueOf(str_gst);
-                        Double d_GstCount = dTotalPrice_c * d_gst / 100;
-                        Double d_proceTotal = dTotalPrice_c + d_GstCount;
+                        binding.subTotalPrice.setText(String.valueOf(d_TotalPriceBooking));
+                        d_gst = Double.valueOf(str_gst);
+                        d_GstCount = dTotalPrice_c * d_gst / 100;
+                        d_proceTotal = dTotalPrice_c + d_GstCount;
+
                         binding.TotalGST.setText(String.valueOf(d_GstCount));
                         binding.grandTotal.setText(String.valueOf(d_proceTotal));
                         binding.dueamountTotal.setText(String.valueOf(d_proceTotal));
@@ -440,21 +452,22 @@ public class JobDetails extends Fragment {
                                 advancrOrderModel.setQtty(qtty);
 
                                 Double d_price = Double.valueOf(add_service_price);
-                                d_TotalPrice1 = d_TotalPrice1 + d_price;
+                                d_TotalPriceAdvance = d_TotalPriceAdvance + d_price;
 
                                 advancrOrder.add(advancrOrderModel);
 
                             }
 
-                            double dTotalPrice1 = d_TotalPrice + d_TotalPrice1;
+                            d_dTotalPrice_c = Double.valueOf(coupon_amnt);
+                            dTotalPrice_c = d_TotalPriceBooking - d_dTotalPrice_c;
 
-                            Double d_dTotalPrice_c1 = Double.valueOf(coupon_amnt);
-                            dTotalPrice_c = dTotalPrice1 - d_dTotalPrice_c1;
-                            binding.disTotalPrice.setText(String.valueOf(d_dTotalPrice_c1));
+                            dTotalPrice1 = d_TotalPriceAdvance + dTotalPrice_c;
+                            binding.disTotalPrice.setText(String.valueOf(d_dTotalPrice_c));
                             binding.subTotalPrice.setText(String.valueOf(dTotalPrice1));
                             d_gst1 = Double.valueOf(str_gst);
-                            Double d_GstCount1 = dTotalPrice_c * d_gst1 / 100;
-                            d_proceTotal1 = dTotalPrice_c + d_GstCount1;
+                            d_GstCount1 = dTotalPrice1 * d_gst1 / 100;
+                            d_proceTotal1 = dTotalPrice1 + d_GstCount1;
+
                             binding.TotalGST.setText(String.valueOf(d_GstCount1));
                             binding.grandTotal.setText(String.valueOf(d_proceTotal1));
                             binding.dueamountTotal.setText(String.valueOf(d_proceTotal1));
@@ -467,9 +480,9 @@ public class JobDetails extends Fragment {
 
                         } else {
 
-                             binding.recyclerAdvanceOrder.setVisibility(View.GONE);
-                             binding.advance.setVisibility(View.GONE);
-                             binding.linAdvanceOrder.setVisibility(View.GONE);
+                            binding.recyclerAdvanceOrder.setVisibility(View.GONE);
+                            binding.advance.setVisibility(View.GONE);
+                            binding.linAdvanceOrder.setVisibility(View.GONE);
 
                             Toast.makeText(getActivity(), "Additional Services Not Available", Toast.LENGTH_SHORT).show();
 
@@ -499,7 +512,7 @@ public class JobDetails extends Fragment {
 
                         if (jsonArray_transaction.length() != 0) {
 
-                            for(int l = 0;l<jsonArray_transaction.length();l++){
+                            for (int l = 0; l < jsonArray_transaction.length(); l++) {
 
                                 JSONObject jsonObject_transaction = jsonArray_transaction.getJSONObject(l);
                                 transaction_id = jsonObject_transaction.getString("transaction_id");
@@ -518,12 +531,14 @@ public class JobDetails extends Fragment {
 
                             String str_transamt = String.valueOf(transAmount);
                             binding.paidamtTotal.setText(str_transamt);
-                            Double d_dueamount = d_proceTotal1 - transAmount;
+                            String drandtoaltam = binding.grandTotal.getText().toString().trim();
+                            grandtotaldue = Double.valueOf(drandtoaltam);
+                            d_dueamount = grandtotaldue - transAmount;
                             binding.dueamountTotal.setText(String.valueOf(d_dueamount));
 
-                        }else{
+                        } else {
 
-                             binding.relPaidAmount.setVisibility(View.GONE);
+                            binding.relPaidAmount.setVisibility(View.GONE);
                             //binding.relDueAmount.setVisibility(View.GONE);
                             binding.paidamount.setVisibility(View.GONE);
 
@@ -548,7 +563,7 @@ public class JobDetails extends Fragment {
                             binding.linServices.setVisibility(View.VISIBLE);
                         }*/
 
-                        if(status_valid.equals("null")){
+                        if (status_valid.equals("null")) {
 
                             binding.linVerifayOtp.setVisibility(View.VISIBLE);
                             binding.otpVerifay.setVisibility(View.VISIBLE);
@@ -557,10 +572,9 @@ public class JobDetails extends Fragment {
                             binding.btnSubmit2.setVisibility(View.GONE);
                             binding.btnSubmit3.setVisibility(View.GONE);
 
-                        }
-                        else if(status_valid.equals("1")){
+                        } else if (status_valid.equals("1")) {
 
-                            if(verify_otp.equals("1")){
+                            if (verify_otp.equals("1")) {
 
                                 binding.btnSubmit12.setVisibility(View.VISIBLE);
                                 binding.btnSubmit2.setVisibility(View.VISIBLE);
@@ -571,8 +585,7 @@ public class JobDetails extends Fragment {
                                 binding.otpVerifay.setTextColor(ContextCompat.getColor(getContext(), R.color.teal_200));
                                 binding.linServices.setVisibility(View.VISIBLE);
 
-                            }
-                            else{
+                            } else {
 
                                 binding.linVerifayOtp.setVisibility(View.VISIBLE);
                                 binding.otpVerifay.setVisibility(View.VISIBLE);
@@ -582,8 +595,7 @@ public class JobDetails extends Fragment {
                                 binding.linAdvanceOrder.setVisibility(View.GONE);
                             }
 
-                        }
-                        else if(status_valid.equals("2")){
+                        } else if (status_valid.equals("2")) {
 
                             binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
@@ -596,8 +608,7 @@ public class JobDetails extends Fragment {
                             binding.btnSubmit12.setText("Remove Additional Bill");
                             binding.btnSubmit3.setText("New Bill Accepted by user");
 
-                        }
-                        else if(status_valid.equals("3")){
+                        } else if (status_valid.equals("3")) {
 
                             binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
@@ -608,8 +619,7 @@ public class JobDetails extends Fragment {
 
                             binding.btnSubmit12.setText("Work Started");
 
-                        }
-                        else if(status_valid.equals("4")){
+                        } else if (status_valid.equals("4")) {
 
                             binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
@@ -620,11 +630,9 @@ public class JobDetails extends Fragment {
 
                             binding.btnSubmit12.setText("Work Completed");
 
-                        }
+                        } else if (status_valid.equals("5")) {
 
-                        else if(status_valid.equals("5")){
-
-                            if(binding.dueamountTotal.getText().equals("0.0")){
+                            if (binding.dueamountTotal.getText().equals("0.0")) {
 
                                 binding.linVerifayOtp.setVisibility(View.GONE);
                                 binding.otpVerifay.setVisibility(View.GONE);
@@ -634,7 +642,7 @@ public class JobDetails extends Fragment {
                                 binding.btnSubmit3.setVisibility(View.GONE);
                                 binding.linServices.setVisibility(View.GONE);
 
-                            }else{
+                            } else {
 
                                 binding.linVerifayOtp.setVisibility(View.GONE);
                                 binding.otpVerifay.setVisibility(View.GONE);
@@ -650,8 +658,7 @@ public class JobDetails extends Fragment {
                                 binding.btnSubmit2.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color4));
                             }
 
-                        }
-                        else if(status_valid.equals("6")){
+                        } else if (status_valid.equals("6")) {
 
                             binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
@@ -660,8 +667,7 @@ public class JobDetails extends Fragment {
                             binding.btnSubmit2.setVisibility(View.GONE);
                             binding.btnSubmit3.setVisibility(View.GONE);
 
-                        }
-                        else if(status_valid.equals("7")){
+                        } else if (status_valid.equals("7")) {
 
                             binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
@@ -721,7 +727,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -730,14 +736,14 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
 
                         binding.btnSubmit3.setVisibility(View.VISIBLE);
                         binding.btnSubmit12.setText("Remove Additional Bill");
                         binding.btnSubmit3.setText("New Bill Accepted by user");
 
 
-                    }else{
+                    } else {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -779,7 +785,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void verifayOtp(String userId, String orderId, String OTP){
+    public void verifayOtp(String userId, String orderId, String OTP) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("OTP Verifay Please Wait.....");
@@ -797,7 +803,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -806,7 +812,7 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
 
                         binding.btnSubmit12.setVisibility(View.VISIBLE);
                         binding.btnSubmit2.setVisibility(View.VISIBLE);
@@ -816,7 +822,7 @@ public class JobDetails extends Fragment {
                         binding.otpVerifay.setTextColor(ContextCompat.getColor(getContext(), R.color.teal_200));
                         binding.linServices.setVisibility(View.VISIBLE);
 
-                    }else{
+                    } else {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -838,18 +844,18 @@ public class JobDetails extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 progressDialog.dismiss();
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
-                params.put("user_id",userId);
-                params.put("order_id",orderId);
-                params.put("OTP",OTP);
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", userId);
+                params.put("order_id", orderId);
+                params.put("OTP", OTP);
                 return params;
             }
         };
@@ -859,7 +865,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void workStarted(String status, String orderId){
+    public void workStarted(String status, String orderId) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("WorkStarted Please Wait.....");
@@ -877,7 +883,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -886,12 +892,12 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
 
                         binding.btnSubmit12.setText("Work Completed");
                         binding.btnSubmit3.setVisibility(View.GONE);
 
-                    }else{
+                    } else {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -913,17 +919,17 @@ public class JobDetails extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 progressDialog.dismiss();
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
-                params.put("order_id",orderId);
-                params.put("status",status);
+                Map<String, String> params = new HashMap<>();
+                params.put("order_id", orderId);
+                params.put("status", status);
                 return params;
             }
         };
@@ -933,7 +939,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void cancelorder(String orderId, String status, String reason, String visitingcharge,String customer_id){
+    public void cancelorder(String orderId, String status, String reason, String visitingcharge, String customer_id) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("WorkStarted Please Wait.....");
@@ -951,7 +957,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -960,7 +966,7 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
                     }
 
 
@@ -975,20 +981,20 @@ public class JobDetails extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 progressDialog.dismiss();
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
-                params.put("order_id",orderId);
-                params.put("reason",reason);
-                params.put("status",status);
-                params.put("visitingcharge",visitingcharge);
-                params.put("customer_id",customer_id);
+                Map<String, String> params = new HashMap<>();
+                params.put("order_id", orderId);
+                params.put("reason", reason);
+                params.put("status", status);
+                params.put("visitingcharge", visitingcharge);
+                params.put("customer_id", customer_id);
                 return params;
             }
         };
@@ -998,7 +1004,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void completeOrder(String orderId, String status,String vendor_commition, String vendor_id){
+    public void completeOrder(String orderId, String status, String vendor_commition, String vendor_id) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("WorkStarted Please Wait.....");
@@ -1015,7 +1021,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -1024,7 +1030,7 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
                     }
 
 
@@ -1039,19 +1045,19 @@ public class JobDetails extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 progressDialog.dismiss();
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
-                params.put("order_id",orderId);
-                params.put("status",status);
-                params.put("vendor_commition",vendor_commition);
-                params.put("vendor_id",vendor_id);
+                Map<String, String> params = new HashMap<>();
+                params.put("order_id", orderId);
+                params.put("status", status);
+                params.put("vendor_commition", vendor_commition);
+                params.put("vendor_id", vendor_id);
                 return params;
             }
         };
@@ -1061,7 +1067,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void openDialog_Logout(String user_id, String order_id){
+    public void openDialog_Logout(String user_id, String order_id) {
 
         dialogadditional = new Dialog(getActivity());
         dialogadditional.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1145,7 +1151,7 @@ public class JobDetails extends Fragment {
 
 
                             LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-                            DeleteAdditionalAdapter deleteAdditionalAdapter = new DeleteAdditionalAdapter(getContext(), advancrOrder,orderId);
+                            DeleteAdditionalAdapter deleteAdditionalAdapter = new DeleteAdditionalAdapter(getContext(), advancrOrder, orderId);
                             recyclerviewAdvanceOrder.setLayoutManager(linearLayoutManager3);
                             recyclerviewAdvanceOrder.setHasFixedSize(true);
                             recyclerviewAdvanceOrder.setAdapter(deleteAdditionalAdapter);
@@ -1193,14 +1199,14 @@ public class JobDetails extends Fragment {
 
                 dialogadditional.dismiss();
 
-                singleOrderDetails(venderId,orderId);
+                singleOrderDetails(venderId, orderId);
             }
         });
 
         dialogadditional.show();
     }
 
-    public void ordercancle_Dialog(){
+    public void ordercancle_Dialog() {
 
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1225,10 +1231,10 @@ public class JobDetails extends Fragment {
                 Toast.makeText(getActivity(), "Fill The Description", Toast.LENGTH_SHORT).show();
 
 
-            }else{
+            } else {
 
                 String str_desc = description.getText().toString().trim();
-                cancelorder(orderId,"7",str_desc,"250",cususer_id);
+                cancelorder(orderId, "7", str_desc, "250", cususer_id);
 
                 dialog.dismiss();
             }
@@ -1243,7 +1249,7 @@ public class JobDetails extends Fragment {
 
     }
 
-    public void workstarted_Dialog(){
+    public void workstarted_Dialog() {
 
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1262,7 +1268,7 @@ public class JobDetails extends Fragment {
 
         btn_yes.setOnClickListener(view -> {
 
-            workStarted("4",orderId);
+            workStarted("4", orderId);
 
             dialog.dismiss();
 
@@ -1276,7 +1282,7 @@ public class JobDetails extends Fragment {
         dialog.show();
     }
 
-    public void completework_Dialog(){
+    public void completework_Dialog() {
 
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1302,7 +1308,7 @@ public class JobDetails extends Fragment {
             String str_vcommition = String.valueOf(d_vcommition);
 
 
-            completeOrder(orderId,"5",str_vcommition, venderId);
+            completeOrder(orderId, "5", str_vcommition, venderId);
 
             dialog.dismiss();
 
@@ -1316,7 +1322,7 @@ public class JobDetails extends Fragment {
         dialog.show();
     }
 
-    public void accepetorder_Dialog(){
+    public void accepetorder_Dialog() {
 
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1351,7 +1357,7 @@ public class JobDetails extends Fragment {
 
     }
 
-    public void collectCash(String user_id, String order_id,String payment_id, String paid_amount, String vendor_id){
+    public void collectCash(String user_id, String order_id, String payment_id, String paid_amount, String vendor_id) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Collect Cash Please Wait.....");
@@ -1369,7 +1375,7 @@ public class JobDetails extends Fragment {
                     String status = jsonObject.getString("status");
                     String error = jsonObject.getString("error");
 
-                    if(status.equals("200")){
+                    if (status.equals("200")) {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -1378,7 +1384,7 @@ public class JobDetails extends Fragment {
 
                         Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
 
-                        singleOrderDetails(venderId,orderId);
+                        singleOrderDetails(venderId, orderId);
 
                         binding.btnSubmit12.setVisibility(View.GONE);
                         binding.btnSubmit2.setVisibility(View.GONE);
@@ -1387,7 +1393,9 @@ public class JobDetails extends Fragment {
                         binding.linVerifayOtp.setVisibility(View.GONE);
                         binding.otpVerifay.setVisibility(View.GONE);
 
-                    }else{
+                        binding.dueamountTotal.setText("0.00");
+
+                    } else {
 
                         String messages = jsonObject.getString("messages");
                         JSONObject jsonObject_message = new JSONObject(messages);
@@ -1409,19 +1417,19 @@ public class JobDetails extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 progressDialog.dismiss();
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
-                params.put("user_id",user_id);
-                params.put("order_id",order_id);
-                params.put("paid_amount",paid_amount);
-                params.put("vendor_id",vendor_id);
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", user_id);
+                params.put("order_id", order_id);
+                params.put("paid_amount", paid_amount);
+                params.put("vendor_id", vendor_id);
                 return params;
             }
         };
@@ -1432,7 +1440,7 @@ public class JobDetails extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    public void collectcash_Dialog(){
+    public void collectcash_Dialog() {
 
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1451,16 +1459,16 @@ public class JobDetails extends Fragment {
 
         btn_yes.setOnClickListener(view -> {
 
-            if(binding.dueamountTotal.getText().equals("0.0")){
+            if (binding.dueamountTotal.getText().equals("0.0")) {
 
-                collectCash(user_Id,orderId,payment_id,"0.0",venderId);
+                collectCash(user_Id, orderId, payment_id, "0.0", venderId);
 
                 dialog.dismiss();
 
-            }else{
+            } else {
 
                 String dueamt = binding.dueamountTotal.getText().toString().trim();
-                collectCash(user_Id,orderId,payment_id,dueamt,venderId);
+                collectCash(user_Id, orderId, payment_id, dueamt, venderId);
 
                 dialog.dismiss();
             }
@@ -1477,7 +1485,7 @@ public class JobDetails extends Fragment {
     }
 
 
-    public class DeleteAdditionalAdapter extends RecyclerView.Adapter<DeleteAdditionalAdapter.ViewHolder>{
+    public class DeleteAdditionalAdapter extends RecyclerView.Adapter<DeleteAdditionalAdapter.ViewHolder> {
 
         Context context;
         ArrayList<AdvancrOrderModel> advancrOrderModels;
@@ -1494,7 +1502,7 @@ public class JobDetails extends Fragment {
         @NonNull
         @Override
         public DeleteAdditionalAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.deleteadvance,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.deleteadvance, parent, false);
             return new DeleteAdditionalAdapter.ViewHolder(view);
         }
 
@@ -1511,7 +1519,7 @@ public class JobDetails extends Fragment {
 
                 advanceOrder_id = orderModel.getAddServiceId();
                 order_Id = orderModel.getOrderId();
-                deleteAdvanceOrder(order_Id,advanceOrder_id);
+                deleteAdvanceOrder(order_Id, advanceOrder_id);
 
             });
         }
@@ -1522,7 +1530,8 @@ public class JobDetails extends Fragment {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView text_productName,text_Qty,text_Price,text_Delete;
+            TextView text_productName, text_Qty, text_Price, text_Delete;
+
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
@@ -1533,7 +1542,7 @@ public class JobDetails extends Fragment {
             }
         }
 
-        public void deleteAdvanceOrder(String orderId, String aditinal_serv_id){
+        public void deleteAdvanceOrder(String orderId, String aditinal_serv_id) {
 
             ProgressDialog progressDialog = new ProgressDialog(context);
             progressDialog.setMessage("Remove Order Please Wait.....");
@@ -1551,7 +1560,7 @@ public class JobDetails extends Fragment {
                         String status = jsonObject.getString("status");
                         String error = jsonObject.getString("error");
 
-                        if(status.equals("200")){
+                        if (status.equals("200")) {
 
                             String messages = jsonObject.getString("messages");
                             JSONObject jsonObject_message = new JSONObject(messages);
@@ -1560,10 +1569,10 @@ public class JobDetails extends Fragment {
 
                             Toast.makeText(context, messstatus, Toast.LENGTH_SHORT).show();
 
-                            singleOrderDetails(venderId,orderId);
+                            singleOrderDetails(venderId, orderId);
                             dialogadditional.dismiss();
 
-                        }else{
+                        } else {
 
                             String messages = jsonObject.getString("messages");
                             JSONObject jsonObject_message = new JSONObject(messages);
@@ -1584,17 +1593,17 @@ public class JobDetails extends Fragment {
                 public void onErrorResponse(VolleyError error) {
 
                     progressDialog.dismiss();
-                    Toast.makeText(context, ""+error, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "" + error, Toast.LENGTH_SHORT).show();
                 }
-            }){
+            }) {
 
                 @Nullable
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
 
-                    Map<String,String> params = new HashMap<>();
-                    params.put("order_id",orderId);
-                    params.put("aditinal_serv_id[]",aditinal_serv_id);
+                    Map<String, String> params = new HashMap<>();
+                    params.put("order_id", orderId);
+                    params.put("aditinal_serv_id[]", aditinal_serv_id);
                     return params;
                 }
             };

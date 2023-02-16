@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "276290349857",
+    "project_id": "apnisevatechnician",
+    "storage_bucket": "apnisevatechnician.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276290349857:android:86cd7b4dfeabb4d3b66c60",
+        "android_client_info": {
+          "package_name": "com.example.apnisevatechnician"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276290349857-adges1hu9gn4ajda45rntc1k6kgvp6rt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apnisevatechnician",
+            "certificate_hash": "b427c6362e62d68a216bffa97eb54a7963e7ebb4"
+          }
+        },
+        {
+          "client_id": "276290349857-t7djd5rbj3tvimo4vsajirsq2qhmt45d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuJL7g_wJ4VzTldxxryT0n3UDZQ4Vv6oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276290349857-t7djd5rbj3tvimo4vsajirsq2qhmt45d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

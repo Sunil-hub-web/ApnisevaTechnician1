@@ -19,6 +19,7 @@ public class SessionManager {
     private static final String IS_USERNAME="isusername";
     private static final String IS_USERMOBILENO="isusermobileno";
     private static final String IS_USEREMAIL="isuseremail";
+    private static final String FCM_TOKEN="fcmtoken";
 
     public SessionManager(Context context) {
 
@@ -84,6 +85,18 @@ public class SessionManager {
 
     public static String getIsLogin() {
         return IS_LOGIN;
+    }
+
+    public String getFcmToken(){
+
+        return  sharedprefernce.getString(FCM_TOKEN,"DEFAULT");
+    }
+
+    public void setFcmToken(String id){
+
+        editor.putString(FCM_TOKEN,id);
+        editor.commit();
+
     }
 
 

@@ -2,6 +2,7 @@ package com.example.apnisevatechnician;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -11,6 +12,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
     WebView webView;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webView.setVerticalScrollBarEnabled(true);
         webSettings.setJavaScriptEnabled(true);
-        webView.getSettings().setAppCachePath(getApplicationContext().getFilesDir().getAbsolutePath() + "/cache");
+        //webView.getSettings().setAppCachePath(getApplicationContext().getFilesDir().getAbsolutePath() + "/cache");
         webView.getSettings().setDatabasePath(getApplicationContext().getFilesDir().getAbsolutePath() + "/databases");
 
     }

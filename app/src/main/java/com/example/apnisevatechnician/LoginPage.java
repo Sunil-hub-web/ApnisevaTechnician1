@@ -1,5 +1,6 @@
 package com.example.apnisevatechnician;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,8 +31,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apnisevatechnician.databinding.ActivityLoginPageBinding;
 import com.example.apnisevatechnician.extra.AppUrl;
+import com.example.apnisevatechnician.extra.SessionManager;
 import com.example.apnisevatechnician.extra.SharedPrefManager;
 import com.example.apnisevatechnician.modelclass.Login_ModelClass;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +50,9 @@ public class LoginPage extends AppCompatActivity {
     ActivityLoginPageBinding binding;
     boolean passwordVisiable;
 
+    String token;
+    SessionManager sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +62,33 @@ public class LoginPage extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        sessionManager = new SessionManager(LoginPage.this);
+
         getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+
+                        if (!task.isSuccessful()) {
+                            Log.w("hgsavajshj", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        token = task.getResult();
+                        sessionManager.setFcmToken(token);
+
+
+                        // Log and toast
+                        //String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d("hujasgugjgh", token);
+                        //Toast.makeText(LoginPage.this, token, Toast.LENGTH_LONG).show();
+
+                    }
+                });
 
         binding.editPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -207,7 +240,9 @@ public class LoginPage extends AppCompatActivity {
                 String username = binding.editMobileNo.getText().toString().trim();
                 String password = binding.editPassword.getText().toString().trim();
 
-                userLoginPage(username,password);
+                String accesstoken = sessionManager.getFcmToken();
+
+                userLoginPage(username,password,accesstoken);
             }
 
         });
@@ -224,7 +259,7 @@ public class LoginPage extends AppCompatActivity {
 
     }
 
-    public void userLoginPage(String username,String Password){
+    public void userLoginPage(String username,String Password,String accesstoken){
 
         ProgressDialog progressDialog = new ProgressDialog(LoginPage.this);
         progressDialog.setMessage("Login Please Wait.....");
@@ -330,6 +365,7 @@ public class LoginPage extends AppCompatActivity {
                 Map<String,String> params = new HashMap<>();
                 params.put("username",username);
                 params.put("Password",Password);
+                params.put("accesstoken",accesstoken);
                 return params;
             }
         };

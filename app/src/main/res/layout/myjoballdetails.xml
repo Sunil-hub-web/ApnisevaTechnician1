@@ -534,7 +534,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:id="@+id/linVerifayOtp">
+                        android:id="@+id/linVerifayOtp"
+                        android:visibility="gone">
 
                         <EditText
                             android:id="@+id/edit_VerifayOTP"
@@ -604,7 +605,6 @@
                             android:hint="EnterServices"
                             android:imeOptions="actionDone"
                             android:inputType="text"
-                            android:maxLength="10"
                             android:textColor="@color/color5"
                             android:textSize="@dimen/twenty_size"
                             android:textStyle="normal">
