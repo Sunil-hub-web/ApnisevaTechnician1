@@ -290,7 +290,6 @@ public class LoginPage extends AppCompatActivity {
                         JSONArray jsonArray = new JSONArray(statusArray);
                         for (int i = 0;i<jsonArray.length();i++){
 
-
                             JSONObject jsonObject_statues = jsonArray.getJSONObject(i);
 
                             String id = jsonObject_statues.getString("id");

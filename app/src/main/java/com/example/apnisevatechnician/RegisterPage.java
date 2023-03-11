@@ -392,7 +392,7 @@ public class RegisterPage extends AppCompatActivity {
                         JSONObject jsonObject_message = new JSONObject(messages);
                         String responsecode = jsonObject_message.getString("responsecode");
 
-                        Toast.makeText(RegisterPage.this, responsecode, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterPage.this, messages, Toast.LENGTH_SHORT).show();
 
                         startActivity(new Intent(RegisterPage.this,LoginPage.class));
 
