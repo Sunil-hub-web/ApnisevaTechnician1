@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:276290349857:android:86cd7b4dfeabb4d3b66c60",
         "android_client_info": {
-          "package_name": "com.example.apnisevatechnician"
+          "package_name": "com.in.apnisevatechinican"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "276290349857-adges1hu9gn4ajda45rntc1k6kgvp6rt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.apnisevatechnician",
+            "package_name": "com.in.apnisevatechinican",
             "certificate_hash": "b427c6362e62d68a216bffa97eb54a7963e7ebb4"
           }
         },

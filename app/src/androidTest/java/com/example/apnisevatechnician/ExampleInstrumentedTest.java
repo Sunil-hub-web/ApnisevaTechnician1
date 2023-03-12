@@ -1,4 +1,4 @@
-package com.example.apnisevatechnician;
+package com.in.apnisevatechinican;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.apnisevatechnician", appContext.getPackageName());
+        assertEquals("com.in.apnisevatechinican", appContext.getPackageName());
     }
 }
