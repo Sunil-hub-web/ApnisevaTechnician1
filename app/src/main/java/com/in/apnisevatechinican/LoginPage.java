@@ -280,7 +280,7 @@ public class LoginPage extends AppCompatActivity {
 
                     if(status.equals("200")){
 
-                        Toast.makeText(LoginPage.this, "Login Success Fully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginPage.this, "Login Successfully", Toast.LENGTH_SHORT).show();
 
                         String error = jsonObject.getString("error");
                         String messages = jsonObject.getString("messages");

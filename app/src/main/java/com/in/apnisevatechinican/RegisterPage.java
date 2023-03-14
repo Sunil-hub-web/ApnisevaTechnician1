@@ -389,7 +389,7 @@ public class RegisterPage extends AppCompatActivity {
 
                     if(status.equals("200")){
 
-                        Toast.makeText(RegisterPage.this, "Register Success Fully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterPage.this, "Register Successfully", Toast.LENGTH_SHORT).show();
 
                         String error = jsonObject.getString("error");
                         String messages = jsonObject.getString("messages");
