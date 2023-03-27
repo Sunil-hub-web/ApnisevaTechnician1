@@ -24,4 +24,5 @@ public class AppUrl {
     public static final String Aditional_Payment = baseUrl1+"Aditional_Payment";
     public static final String remove_aditional_service = baseUrl1+"remove_aditional_service";
     public static final String transaction_history = baseUrl1+"transaction_history";
+    public static final String Submitratting = baseUrl1+"Submitratting";
 }
