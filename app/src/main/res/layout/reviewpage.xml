@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RatingBar
+            android:id="@+id/reatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_gravity="center">
+
+        </RatingBar>
+
+        <EditText
+            android:id="@+id/writeComments"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hundred_twenty"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:layout_marginBottom="@dimen/ten"
+            android:background="@drawable/edit_background1"
+            android:gravity="start"
+            android:text="Write Your Comments *"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/ten"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize"
+            android:fontFamily="@font/inter_regular"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_Submit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/ten"
+                android:backgroundTint="#15AA1B"
+                android:layout_gravity="left"
+                android:padding="@dimen/ten"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:text="Submit"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_Cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/ten"
+                android:backgroundTint="#E33629"
+                android:layout_gravity="left"
+                android:padding="@dimen/ten"
+                android:text="Cancel"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginRight="@dimen/twenty"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

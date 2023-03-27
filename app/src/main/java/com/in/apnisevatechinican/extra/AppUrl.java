@@ -3,7 +3,8 @@ package com.in.apnisevatechinican.extra;
 public class AppUrl {
 
     //public static final String baseUrl1 = "http://collegeprojectz.com/apniseva/API/";
-    public static final String baseUrl1 = "https://apniseva.com/API/";
+   // public static final String baseUrl1 = "https://apniseva.com/API/";
+    public static final String baseUrl1 = "http://apniseva.com/_beta/APITEST/";
 
     public static final String userLogin = baseUrl1+"login";
     public static final String ForgetPassword = baseUrl1+"ForgetPassword";
@@ -24,4 +25,8 @@ public class AppUrl {
     public static final String Aditional_Payment = baseUrl1+"Aditional_Payment";
     public static final String remove_aditional_service = baseUrl1+"remove_aditional_service";
     public static final String transaction_history = baseUrl1+"transaction_history";
+    public static final String Submitratting = baseUrl1+"Submitratting";
+    public static final String technician_walletrecharge = baseUrl1+"technician_walletrecharge";
+    public static final String technician_walletdetails = baseUrl1+"technician_walletdetails";
+
 }

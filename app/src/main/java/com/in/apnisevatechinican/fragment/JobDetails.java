@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -208,29 +209,30 @@ public class JobDetails extends Fragment {
                 //binding.linVerifayOtp.setVisibility(View.GONE);
                 binding.otpVerifay.setVisibility(View.GONE);
 
-                binding.btnSubmit12.setVisibility(View.GONE);
+                binding.btnSubmit12.setVisibility(View.VISIBLE);
                 binding.btnSubmit2.setVisibility(View.GONE);
                 binding.btnSubmit3.setVisibility(View.GONE);
 
-                binding.btnSubmit12.setText("Pay Online");
+                binding.btnSubmit12.setText("Submit Review");
                 binding.btnSubmit2.setText("Collect Cash");
 
-                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color1));
+                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
                 binding.btnSubmit2.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color4));
+
 
             } else {
 
                 //binding.linVerifayOtp.setVisibility(View.GONE);
                 binding.otpVerifay.setVisibility(View.GONE);
 
-                binding.btnSubmit12.setVisibility(View.GONE);
+                binding.btnSubmit12.setVisibility(View.VISIBLE);
                 binding.btnSubmit2.setVisibility(View.VISIBLE);
                 binding.btnSubmit3.setVisibility(View.GONE);
 
-                binding.btnSubmit12.setText("Pay Online");
+                binding.btnSubmit12.setText("Submit Review");
                 binding.btnSubmit2.setText("Collect Cash");
 
-                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color1));
+                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
                 binding.btnSubmit2.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color4));
             }
 
@@ -240,18 +242,24 @@ public class JobDetails extends Fragment {
             //binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
 
-            binding.btnSubmit12.setVisibility(View.GONE);
+            binding.btnSubmit12.setVisibility(View.VISIBLE);
             binding.btnSubmit2.setVisibility(View.GONE);
             binding.btnSubmit3.setVisibility(View.GONE);
+
+            binding.btnSubmit12.setText("Submit Review");
+            binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
 
         } else if (status.equals("7")) {
 
             //binding.linVerifayOtp.setVisibility(View.GONE);
             binding.otpVerifay.setVisibility(View.GONE);
 
-            binding.btnSubmit12.setVisibility(View.GONE);
+            binding.btnSubmit12.setVisibility(View.VISIBLE);
             binding.btnSubmit2.setVisibility(View.GONE);
             binding.btnSubmit3.setVisibility(View.GONE);
+
+            binding.btnSubmit12.setText("Submit Review");
+            binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
 
         }
 
@@ -309,6 +317,10 @@ public class JobDetails extends Fragment {
             } else if (binding.btnSubmit12.getText().toString().trim().equals("Pay Online")) {
 
                 collectcash_Dialog();
+
+            } else if (binding.btnSubmit12.getText().toString().trim().equals("Submit Review")) {
+
+                reviews_Dialog();
 
             }
         });
@@ -688,24 +700,27 @@ public class JobDetails extends Fragment {
                                 //binding.linVerifayOtp.setVisibility(View.GONE);
                                 binding.otpVerifay.setVisibility(View.GONE);
 
-                                binding.btnSubmit12.setVisibility(View.GONE);
+                                binding.btnSubmit12.setVisibility(View.VISIBLE);
                                 binding.btnSubmit2.setVisibility(View.GONE);
                                 binding.btnSubmit3.setVisibility(View.GONE);
                                 binding.linServices.setVisibility(View.GONE);
+
+                                binding.btnSubmit12.setText("Submit Review");
+                                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
 
                             } else {
 
                                // binding.linVerifayOtp.setVisibility(View.GONE);
                                 binding.otpVerifay.setVisibility(View.GONE);
 
-                                binding.btnSubmit12.setVisibility(View.GONE);
+                                binding.btnSubmit12.setVisibility(View.VISIBLE);
                                 binding.btnSubmit2.setVisibility(View.VISIBLE);
                                 binding.btnSubmit3.setVisibility(View.GONE);
 
-                                binding.btnSubmit12.setText("Pay Online");
+                                binding.btnSubmit12.setText("Submit Review");
                                 binding.btnSubmit2.setText("Collect Cash");
 
-                                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color1));
+                                binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
                                 binding.btnSubmit2.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color4));
                             }
 
@@ -714,18 +729,24 @@ public class JobDetails extends Fragment {
                             //binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
 
-                            binding.btnSubmit12.setVisibility(View.GONE);
+                            binding.btnSubmit12.setVisibility(View.VISIBLE);
                             binding.btnSubmit2.setVisibility(View.GONE);
                             binding.btnSubmit3.setVisibility(View.GONE);
+
+                            binding.btnSubmit12.setText("Submit Review");
+                            binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
 
                         } else if (status_valid.equals("7")) {
 
                             //binding.linVerifayOtp.setVisibility(View.GONE);
                             binding.otpVerifay.setVisibility(View.GONE);
 
-                            binding.btnSubmit12.setVisibility(View.GONE);
+                            binding.btnSubmit12.setVisibility(View.VISIBLE);
                             binding.btnSubmit2.setVisibility(View.GONE);
                             binding.btnSubmit3.setVisibility(View.GONE);
+
+                            binding.btnSubmit12.setText("Submit Review");
+                            binding.btnSubmit12.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.color8));
 
                         }
 
@@ -1058,7 +1079,7 @@ public class JobDetails extends Fragment {
     public void completeOrder(String orderId, String status, String vendor_commition, String vendor_id) {
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
-        progressDialog.setMessage("WorkStarted Please Wait.....");
+        progressDialog.setMessage("Complete Order Please Wait.....");
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.completeorder, new Response.Listener<String>() {
             @Override
@@ -1116,6 +1137,78 @@ public class JobDetails extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.getCache().clear();
         requestQueue.add(stringRequest);
+    }
+
+    public void ratingreview(String order_id, String from_user_id, String to_user_id,String rating,String review,String usertype){
+
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Complete Order Please Wait.....");
+        progressDialog.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.Submitratting, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                progressDialog.dismiss();
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    String status = jsonObject.getString("status");
+                    String error = jsonObject.getString("error");
+
+                    if (status.equals("200")) {
+
+                        String messages = jsonObject.getString("messages");
+                        JSONObject jsonObject_message = new JSONObject(messages);
+                        String responsecode = jsonObject_message.getString("responsecode");
+                        String messstatus = jsonObject_message.getString("status");
+
+                        Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        String messages = jsonObject.getString("messages");
+                        JSONObject jsonObject_message = new JSONObject(messages);
+                        String responsecode = jsonObject_message.getString("responsecode");
+                        String messstatus = jsonObject_message.getString("status");
+
+                        Toast.makeText(getActivity(), messstatus, Toast.LENGTH_SHORT).show();
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                progressDialog.dismiss();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<>();
+                params.put("order_id", order_id);
+                params.put("from_user_id", from_user_id);
+                params.put("to_user_id", to_user_id);
+                params.put("rating", rating);
+                params.put("review", review);
+                params.put("usertype", usertype);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(3000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.getCache().clear();
+        requestQueue.add(stringRequest);
+
     }
 
     public void openDialog_Logout(String user_id, String order_id) {
@@ -1535,6 +1628,51 @@ public class JobDetails extends Fragment {
 
     }
 
+    public void reviews_Dialog() {
+
+        Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.reviewpage);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.CENTER;
+        dialog.getWindow().setAttributes(lp);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        RatingBar reatingBar = dialog.findViewById(R.id.reatingBar);
+        EditText writeComments = dialog.findViewById(R.id.writeComments);
+        EditText btn_Submit = dialog.findViewById(R.id.btn_Submit);
+        EditText btn_Cancel = dialog.findViewById(R.id.btn_Cancel);
+
+        btn_Submit.setOnClickListener(view ->{
+
+            String totalStars = ""+reatingBar.getNumStars();
+            String rating = ""+reatingBar.getRating();
+
+            if(writeComments.getText().toString().trim().equals("")){
+
+                Toast.makeText(getContext(), "Enter Your Comments", Toast.LENGTH_SHORT).show();
+
+            }else{
+
+                String comments = writeComments.getText().toString().trim();
+
+                ratingreview(orderId,venderId,user_Id,rating,comments,"4");
+            }
+        });
+
+
+        btn_Cancel.setOnClickListener(view -> {
+
+            dialog.dismiss();
+        });
+
+        dialog.show();
+
+    }
 
     public class DeleteAdditionalAdapter extends RecyclerView.Adapter<DeleteAdditionalAdapter.ViewHolder> {
 

@@ -1,6 +1,7 @@
 package com.in.apnisevatechinican.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.in.apnisevatechinican.extra.SharedPrefManager;
 public class HomePage extends Fragment {
 
     HomeFragmentBinding binding;
+    String userid;
 
     @Nullable
     @Override
@@ -28,6 +30,10 @@ public class HomePage extends Fragment {
         View view = binding.getRoot();
 
        // binding.menuimage.setOnClickListener(view1 -> MainActivity.openDrawer(MainActivity.drawerLayout));
+
+        userid = SharedPrefManager.getInstance(getContext()).getUser().getId();
+
+        Log.d("showuserid",userid);
 
         binding.MyJobDetails.setOnClickListener(view1 -> {
 

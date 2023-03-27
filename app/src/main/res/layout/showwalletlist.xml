@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/five"
+        android:background="@drawable/edit_background1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forty"
+            android:background="@drawable/myjobs_bg1"
+            android:layout_margin="@dimen/three">
+
+            <TextView
+                android:id="@+id/booking1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/fifteen"
+                android:fontFamily="@font/inter_regular"
+                android:text="Vender ID : "
+                android:textColor="@color/white"
+                android:textSize="@dimen/twelve_size">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/booking_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/five"
+                android:layout_toRightOf="@id/booking1"
+                android:fontFamily="@font/inter_regular"
+                android:text="#1244"
+                android:textColor="@color/white"
+                android:textSize="@dimen/twelve_size">
+
+            </TextView>
+
+            <!-- <TextView
+                 android:id="@+id/text_seealll"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+                 android:layout_centerVertical="true"
+                 android:layout_marginRight="@dimen/twenty"
+                 android:fontFamily="@font/inter_bold"
+                 android:text="View Details"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/twelve_size">
+
+             </TextView>-->
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/twenty"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Transcation Amount"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/transAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Transcation Type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/transType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Transcation Id"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/transID"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Transcation Date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/transDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

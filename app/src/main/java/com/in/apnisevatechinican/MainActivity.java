@@ -1,5 +1,6 @@
 package com.in.apnisevatechinican;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,12 +22,13 @@ import com.in.apnisevatechinican.fragment.HomePage;
 import com.in.apnisevatechinican.fragment.MyJob;
 import com.in.apnisevatechinican.fragment.MyProfile;
 import com.in.apnisevatechinican.fragment.TransactionFragment;
+import com.in.apnisevatechinican.fragment.WalletFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ActivityMainBinding binding;
     FragmentTransaction ft;
-    TextView nav_Home,nav_profile,nav_job,nav_logout,nav_UserName,nav_MobileNo,nav_transaction;
+    TextView nav_Home,nav_profile,nav_job,nav_logout,nav_UserName,nav_MobileNo,nav_transaction,nav_wallet;
     public static DrawerLayout drawerLayout;
     public static TextView text_name;
     @Override
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_MobileNo = header.findViewById(R.id.nav_MobileNo);
         nav_logout = header.findViewById(R.id.nav_logout);
         nav_transaction = header.findViewById(R.id.nav_transaction);
+        nav_wallet = header.findViewById(R.id.nav_wallet);
        // nav_updateservices = header.findViewById(R.id.nav_updateservices);
 
         ft = getSupportFragmentManager().beginTransaction();
@@ -118,6 +121,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
 
             text_name.setText("Transaction");
+        });
+
+        nav_wallet.setOnClickListener(view1 -> {
+
+            startActivity(new Intent(MainActivity.this,WalletActivity.class));
+            binding.MyDrawer.closeDrawer(GravityCompat.START);
+
+//            binding.MyDrawer.closeDrawer(GravityCompat.START);
+//            ft = getSupportFragmentManager().beginTransaction();
+//            WalletFragment walletFragment = new WalletFragment();
+//            ft.replace(R.id.fram, walletFragment);
+//            ft.addToBackStack(null);
+//            ft.commit();
+
+            text_name.setText("Wallet");
         });
 
        nav_logout.setOnClickListener(view1 -> {

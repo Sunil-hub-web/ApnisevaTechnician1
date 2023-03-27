@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#EDF5F5F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color5">
+
+            <ImageView
+                android:id="@+id/imageback"
+                android:layout_width="@dimen/twenty_five"
+                android:layout_height="@dimen/twenty_five"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginEnd="@dimen/ten"
+                android:layout_marginBottom="@dimen/ten"
+                android:onClick="Clickmenu"
+                android:src="@drawable/left"
+                app:tint="@color/white">
+
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                android:text="Wallet"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/ten">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Balance"
+                android:textColor="@color/color4"
+                android:textSize="@dimen/twenty"
+                android:layout_margin="@dimen/five"/>
+
+            <TextView
+                android:id="@+id/texttotalbalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Rs 0"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/twenty"
+                android:layout_margin="@dimen/five"
+                android:background="@drawable/button_back1"
+                android:padding="@dimen/fifteen"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="Recharge Amount"
+            android:textColor="@color/color4"
+            android:textSize="@dimen/textsize"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginTop="@dimen/ten"/>
+
+        <EditText
+            android:id="@+id/edit_RechargeAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_background"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginRight="@dimen/twenty"
+            android:layout_marginTop="@dimen/five"
+            android:padding="@dimen/fifteen"
+            android:fontFamily="@font/inter_regular"
+            android:ems="10"
+            android:hint="Enter Recharge Amount"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/twenty_size"
+            android:textStyle="normal">
+
+
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_Recharge"
+            android:layout_width="@dimen/two_hundred_fifty"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            app:backgroundTint="@color/color1"
+            android:layout_margin="@dimen/twenty_five"
+            android:text="Recharge"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/white">
+
+
+        </Button>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerviewWallet">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

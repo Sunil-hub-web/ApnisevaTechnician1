@@ -192,6 +192,37 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten">
+
+                <ImageView
+                    android:id="@+id/image_wallet"
+                    android:layout_width="@dimen/twenty_two"
+                    android:layout_height="@dimen/twenty_two"
+                    android:src="@drawable/wallet"
+                    app:tint="@color/white">
+
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/nav_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_toRightOf="@id/image_wallet"
+                    android:drawablePadding="@dimen/ten"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Wallet"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/edittextsize"></TextView>
+
+            </RelativeLayout>
+
            <!-- <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
