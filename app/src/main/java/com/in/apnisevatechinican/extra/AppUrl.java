@@ -29,4 +29,5 @@ public class AppUrl {
     public static final String technician_walletrecharge = baseUrl1+"technician_walletrecharge";
     public static final String technician_walletdetails = baseUrl1+"technician_walletdetails";
 
+    //public static final String Submitratting = baseUrl1+"Submitratting";
 }
